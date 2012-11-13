@@ -10,5 +10,6 @@ namespace com.careerbuilder.api.models {
         public string JobDetailsUrl { get; set; }
         public string JobServiceUrl { get; set; }
         public string SimilarJobsUrl { get; set; }
+        public bool CanBeQuickApplied { get; set; }
     }
 }
