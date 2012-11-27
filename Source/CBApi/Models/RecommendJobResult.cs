@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace CBApi.Models {
     [Serializable]
     public class RecommendJobResult {
@@ -11,5 +12,8 @@ namespace CBApi.Models {
         public string JobServiceUrl { get; set; }
         public string SimilarJobsUrl { get; set; }
         public bool CanBeQuickApplied { get; set; }
+        public string ONet { get; set; }
+        public string ONetFriendlyTitle { get; set; }
+        public DateTime PostingDate { get; set; }
     }
 }

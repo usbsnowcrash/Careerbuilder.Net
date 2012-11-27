@@ -22,6 +22,7 @@ namespace CBApi
         IEmployeeTypesRequest GetEmployeeTypes();
         Job GetJob(string jobDid);
         List<RecommendJobResult> GetRecommendationsForJob(string jobDid);
+        List<RecommendJobResult> GetRecommendationsForJobWithUserPreferences(string jobDid, string userDid);
         List<RecommendJobResult> GetRecommendationsForUser(string externalId);
         IJobSearch JobSearch();
         ResponseJobReport JobReport(string jobDid);

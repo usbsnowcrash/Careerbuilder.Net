@@ -216,10 +216,23 @@ namespace CBApi {
         /// <summary>
         /// Make a call to /v1/recommendations/forjob
         /// </summary>
-        /// <param name="JobDID">The unique ID of the job</param>
-        /// <returns>The job</returns>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The list of recommended jobs, based on the given job.</returns>
         public List<RecommendJobResult> GetRecommendationsForJob(string jobDid) {
             var req = new JobRecommendationsRequest(jobDid, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.GetRecommendations();
+        }
+
+        /// <summary>
+        /// Make a call to /v1/recommendations/forjobwithuserprefs
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <param name="userDid">The unique ID of the user</param>
+        /// <returns>The list of recommended jobs, based on the given job and taking the user's preferences into account.</returns>
+        public List<RecommendJobResult> GetRecommendationsForJobWithUserPreferences(string jobDid, string userDid) {
+            var req = new JobRecommendationsWithUserPreferencesRequest(jobDid, userDid, _Settings);
             WireBeforeRequestEvents(req);
             WireAfterRequestEvents(req);
             return req.GetRecommendations();
