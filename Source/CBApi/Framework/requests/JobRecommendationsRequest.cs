@@ -26,6 +26,7 @@ namespace CBApi.Framework.Requests {
         public List<RecommendJobResult> GetRecommendations() {
             BeforeRequest();
             _request.AddParameter("JobDID", _jobDid);
+            _request.AddParameter("ShowMoreFields", true);
             _request.RootElement = "RecommendJobResults";
             IRestResponse<List<RecommendJobResult>> response = _client.Execute<List<RecommendJobResult>>(_request);
             CheckForErrors(response);
