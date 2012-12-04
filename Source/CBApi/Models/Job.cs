@@ -40,6 +40,7 @@ namespace CBApi.Models {
         public string LocationState { get; set; }
         public bool ManagesOthers { get; set; }
         public DateTime ModifiedDate { get; set; }
+        public string ONetCode { get; set; }
         public Money PayHigh { get; set; }
         public Money PayLow { get; set; }
         public string PayPer { get; set; }

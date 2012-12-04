@@ -3,7 +3,7 @@
 namespace CBApi.Models {
     [Serializable]
     public class RecommendJobResult {
-        public string JobDid { get; set; }
+        public string JobDID { get; set; }
         public string Title { get; set; }
         public double Relevancy { get; set; }
         public Location Location { get; set; }
