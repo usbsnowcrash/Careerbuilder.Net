@@ -72,6 +72,7 @@ namespace CBApi.Framework.Requests
             AddEducationToRequest();
             AddPostedWithinToRequest();
             AddEmployeeTypesToRequest();
+            AddPerPageToRequest();
         }
 
         private void AddEmployeeTypesToRequest()
@@ -171,6 +172,10 @@ namespace CBApi.Framework.Requests
             {
                 _request.AddParameter("Keywords", _Keywords);
             }
+        }
+
+        private void AddPerPageToRequest() {
+            _request.AddParameter("PerPage", _PerPage);
         }
 
         #endregion
