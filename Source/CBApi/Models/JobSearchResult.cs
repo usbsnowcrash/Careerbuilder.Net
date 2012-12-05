@@ -7,6 +7,7 @@ namespace CBApi.Models.Responses {
         public string CompanyDetailsURL { get; set; }
         public string DID { get; set; }
         public string OnetCode { get; set; }
+        public string ONetFriendlyTitle { get; set; }
         public string DescriptionTeaser { get; set; }
         public string Distance { get; set; }
         public string EmploymentType { get; set; }
@@ -20,5 +21,6 @@ namespace CBApi.Models.Responses {
         public string SimilarJobsURL { get; set; }
         public string JobTitle { get; set; }
         public string CompanyImageURL { get; set; }
+        public string HostSite { get; set; }
     }
 }

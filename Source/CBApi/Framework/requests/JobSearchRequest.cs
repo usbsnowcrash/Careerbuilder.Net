@@ -4,10 +4,8 @@ using CBApi.Models;
 using CBApi.Models.Responses;
 using CBApi.Models.Service;
 
-namespace CBApi.Framework.Requests
-{
-    internal class JobSearchRequest : GetRequest, IJobSearch
-    {
+namespace CBApi.Framework.Requests {
+    internal class JobSearchRequest : GetRequest, IJobSearch {
         protected bool ExcludeNationwideJobs = true;
         protected BooleanOperator _BooleanOperator = BooleanOperator.AND;
         protected List<string> _CategoryCodes = new List<string>();
@@ -31,21 +29,17 @@ namespace CBApi.Framework.Requests
         protected bool _SpecificEducation = false;
         protected bool _ExcludeNationWideJobs = true;
         protected bool _ExcludeNonTraditionalJobs = true;
+        protected string _SiteEntity = "";
 
-        public JobSearchRequest(APISettings settings)
-            : base(settings)
-        {
-        }
+        public JobSearchRequest(APISettings settings) : base(settings) { }
 
-        public override string BaseUrl
-        {
+        public override string BaseUrl {
             get { return "/v1/jobsearch"; }
         }
 
         #region IJobSearch Members
 
-        public ResponseJobSearch Search()
-        {
+        public ResponseJobSearch Search() {
             base.BeforeRequest();
             AddParametersToRequest();
             IRestResponse<ResponseJobSearch> response = _client.Execute<ResponseJobSearch>(_request);
@@ -58,8 +52,7 @@ namespace CBApi.Framework.Requests
 
         #region setup request
 
-        protected void AddParametersToRequest()
-        {
+        protected void AddParametersToRequest() {
             AddKeywordsToRequest();
             AddCompanyNameToRequest();
             AddLocationToRequest();
@@ -73,46 +66,37 @@ namespace CBApi.Framework.Requests
             AddPostedWithinToRequest();
             AddEmployeeTypesToRequest();
             AddPerPageToRequest();
+            AddSiteEntityToRequest();
         }
 
-        private void AddEmployeeTypesToRequest()
-        {
-            if (_EmployeeTypes.Count > 0)
-            {
+        private void AddEmployeeTypesToRequest() {
+            if (_EmployeeTypes.Count > 0) {
                 string emps = string.Join(",", _EmployeeTypes);
                 _request.AddParameter("EmpType", emps);
             }
         }
 
-        private void AddPostedWithinToRequest()
-        {
-            if (_PostedWithin >= 1 && _PostedWithin <= 30)
-            {
+        private void AddPostedWithinToRequest() {
+            if (_PostedWithin >= 1 && _PostedWithin <= 30) {
                 _request.AddParameter("PostedWithin", _PostedWithin.ToString());
             }
         }
 
-        private void AddEducationToRequest()
-        {
-            if (!string.IsNullOrEmpty(_EducationCode))
-            {
+        private void AddEducationToRequest() {
+            if (!string.IsNullOrEmpty(_EducationCode)) {
                 _request.AddParameter("EducationCode", _EducationCode);
                 _request.AddParameter("SpecificEducation", _SpecificEducation.ToString());
             }
         }
 
-        private void AddSOCCodeToRequest()
-        {
-            if (!string.IsNullOrEmpty(_Soccode))
-            {
+        private void AddSOCCodeToRequest() {
+            if (!string.IsNullOrEmpty(_Soccode)) {
                 _request.AddParameter("SOCCode", _Soccode);
             }
         }
 
-        private void AddCategoriesToRequest()
-        {
-            if (_CategoryCodes.Count > 0 && _CategoryCodes.Count <= 10)
-            {
+        private void AddCategoriesToRequest() {
+            if (_CategoryCodes.Count > 0 && _CategoryCodes.Count <= 10) {
                 string cats = string.Join(",", _CategoryCodes);
                 _request.AddParameter("Category", cats);
             }
@@ -125,51 +109,39 @@ namespace CBApi.Framework.Requests
             }
         }
 
-        private void AddCompanyDIDsToRequest()
-        {
-            if (_CompanyDids.Count > 0)
-            {
+        private void AddCompanyDIDsToRequest() {
+            if (_CompanyDids.Count > 0) {
                 string comps = string.Join(",", _CompanyDids);
                 _request.AddParameter("CompanyDIDCSV", comps);
             }
         }
 
-        private void AddCountryCodeToRequest()
-        {
-            if (!string.IsNullOrEmpty(_CountryCode))
-            {
+        private void AddCountryCodeToRequest() {
+            if (!string.IsNullOrEmpty(_CountryCode)) {
                 _request.AddParameter("CountryCode", _CountryCode);
             }
         }
 
-        private void AddRadiusToRequest()
-        {
-            if (_Radius >= 5 && _Radius <= 150)
-            {
+        private void AddRadiusToRequest() {
+            if (_Radius >= 5 && _Radius <= 150) {
                 _request.AddParameter("Radius", _Radius.ToString());
             }
         }
 
-        private void AddLocationToRequest()
-        {
-            if (!string.IsNullOrEmpty(_Location))
-            {
+        private void AddLocationToRequest() {
+            if (!string.IsNullOrEmpty(_Location)) {
                 _request.AddParameter("Location", _Location);
             }
         }
 
-        private void AddCompanyNameToRequest()
-        {
-            if (!string.IsNullOrEmpty(_CompanyName))
-            {
+        private void AddCompanyNameToRequest() {
+            if (!string.IsNullOrEmpty(_CompanyName)) {
                 _request.AddParameter("CompanyName", _CompanyName);
             }
         }
 
-        private void AddKeywordsToRequest()
-        {
-            if (!string.IsNullOrEmpty(_Keywords))
-            {
+        private void AddKeywordsToRequest() {
+            if (!string.IsNullOrEmpty(_Keywords)) {
                 _request.AddParameter("Keywords", _Keywords);
             }
         }
@@ -178,130 +150,118 @@ namespace CBApi.Framework.Requests
             _request.AddParameter("PerPage", _PerPage);
         }
 
+        private void AddSiteEntityToRequest() {
+            if (!string.IsNullOrEmpty(_SiteEntity))
+                _request.AddParameter("SiteEntity", _SiteEntity);
+        }
+
         #endregion
 
         #region IJobSearch Methods
 
-        public IJobSearch WhereCountryCode(CountryCode value)
-        {
+        public IJobSearch WhereCountryCode(CountryCode value) {
             _CountryCode = value.ToString();
             return this;
         }
 
-        public IJobSearch WhereIndustry(params string[] industries)
-        {
-            foreach (var item in industries)
-            {
+        public IJobSearch WhereIndustry(params string[] industries) {
+            foreach (var item in industries) {
                 _IndustryCodes.Add(item);
             }
             return this;
         }
 
-        public IJobSearch WhereHostSite(HostSite value)
-        {
+        public IJobSearch WhereHostSite(HostSite value) {
             _CountryCode = value.ToString();
             return this;
         }
 
-        public IJobSearch WhereKeywords(string value)
-        {
+        public IJobSearch WhereKeywords(string value) {
             _Keywords = value;
             return this;
         }
 
-        public IJobSearch WhereCompanyName(string value)
-        {
+        public IJobSearch WhereCompanyName(string value) {
             _CompanyName = value;
             return this;
         }
 
-        public IJobSearch WhereLocation(string value)
-        {
+        public IJobSearch WhereLocation(string value) {
             _Location = value;
             return this;
         }
 
-        public IJobSearch WhereLocation(float latitude, float longitude)
-        {
+        public IJobSearch WhereLocation(float latitude, float longitude) {
             _Location = latitude.ToString() + "::" + longitude.ToString();
             return this;
         }
 
-        public IJobSearch Radius(int value)
-        {
+        public IJobSearch Radius(int value) {
             _Radius = value;
             return this;
         }
 
-        public IJobSearch WhereSOCCode(string value)
-        {
+        public IJobSearch WhereSOCCode(string value) {
             _Soccode = value;
             return this;
         }
 
-        public IJobSearch WherePayGreaterThan(int value)
-        {
+        public IJobSearch WherePayGreaterThan(int value) {
             _MinPay = value;
             return this;
         }
 
-        public IJobSearch WherePayLessThan(int value)
-        {
+        public IJobSearch WherePayLessThan(int value) {
             _MaxPay = value;
             return this;
         }
 
-        public IJobSearch OrderBy(OrderByType value)
-        {
+        public IJobSearch OrderBy(OrderByType value) {
             _OrderBy = value;
             return this;
         }
 
-        public IJobSearch Ascending()
-        {
+        public IJobSearch Ascending() {
             _OrderDirection = OrderDirection.Ascending;
             return this;
         }
 
-        public IJobSearch Descending()
-        {
+        public IJobSearch Descending() {
             _OrderDirection = OrderDirection.Descending;
             return this;
         }
 
-        public IJobSearch SelectTop(int value)
-        {
+        public IJobSearch SelectTop(int value) {
             _PerPage = value;
             return this;
         }
 
-        public IJobSearch Limit(int value)
-        {
+        public IJobSearch Limit(int value) {
             _PerPage = value;
             return this;
         }
 
-        public IJobSearch Offset(int value)
-        {
+        public IJobSearch Offset(int value) {
             _OffSet = value;
             return this;
         }
 
-        public IJobSearch WhereCategories(params Category[] codes)
-        {
-            foreach (var item in codes)
-            {
+        public IJobSearch WhereCategories(params Category[] codes) {
+            foreach (var item in codes) {
                 _CategoryCodes.Add(item.Code);
             }
             return this;
         }
 
-        public IJobSearch WhereCompanyDIDs(params string[] companies)
-        {
-            foreach (var item in companies)
-            {
+        public IJobSearch WhereCompanyDIDs(params string[] companies) {
+            foreach (var item in companies) {
                 _CompanyDids.Add(item);
             }
+            return this;
+        }
+
+        public IJobSearch WhereSiteEntity(string value) {
+            _SiteEntity = value;
             return this;
         }
         #endregion

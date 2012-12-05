@@ -47,6 +47,7 @@ namespace CBApi.Models
         IJobSearch WhereSOCCode(string value);
         IJobSearch WherePayGreaterThan(int value);
         IJobSearch WherePayLessThan(int value);
+        IJobSearch WhereSiteEntity(string value);
         
         ResponseJobSearch Search();
     }
