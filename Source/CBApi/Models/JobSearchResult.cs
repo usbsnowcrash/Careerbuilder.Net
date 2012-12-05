@@ -21,6 +21,5 @@ namespace CBApi.Models.Responses {
         public string SimilarJobsURL { get; set; }
         public string JobTitle { get; set; }
         public string CompanyImageURL { get; set; }
-        public string HostSite { get; set; }
     }
 }

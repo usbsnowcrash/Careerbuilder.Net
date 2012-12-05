@@ -25,12 +25,16 @@ namespace CBApi.Framework.Requests {
 
         public Job Retrieve() {
             base.BeforeRequest();
-            _request.AddParameter("DID", _jobDid);
-            _request.AddParameter("retrieveonetcode", true);
+            AddParametersToRequest();
             _request.RootElement = "Job";
             IRestResponse<Job> response = _client.Execute<Job>(_request);
             CheckForErrors(response);
             return response.Data;
+        }
+
+        protected virtual void AddParametersToRequest() {
+            _request.AddParameter("DID", _jobDid);
+            _request.AddParameter("retrieveonetcode", true);
         }
     }
 }
