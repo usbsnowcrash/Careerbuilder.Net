@@ -81,6 +81,7 @@
     <Compile Include="CBApi\models\ApplicationRequirementsTest.cs" />
     <Compile Include="CBApi\models\QuestionTest.cs" />
     <Compile Include="CBApi\models\JobSearchResultTest.cs" />
+    <Compile Include="CBApi\models\RecommendJobResultTest.cs" />
     <Compile Include="CBApi\models\ResponseJobSearchTest.cs" />
     <Compile Include="CBApi\models\service\TargetSiteMock.cs" />
     <Compile Include="CBApi\framework\requests\UserRecommendationsRequestTest.cs" />
@@ -105,6 +106,10 @@
     <Folder Include="CBApi\framework\events\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="testdata\RecommendJobResult.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="testdata\ResponseBlankApplication.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

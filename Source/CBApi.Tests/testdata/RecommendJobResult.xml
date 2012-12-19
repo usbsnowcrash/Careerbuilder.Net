@@ -1,0 +1,22 @@
+﻿<RecommendJobResult>
+  <JobDID>JHT3D8649TV74ZNK0GJ</JobDID>
+  <Title>Fabrication - Assembly - Sheet Metal</Title>
+  <Relevancy>1</Relevancy>
+  <Location>
+    <State>DE</State>
+    <City>Georgetown</City>
+  </Location>
+  <Company>
+    <CompanyName>Quality Staffing Services</CompanyName>
+    <CompanyDetailsURL>www.qualitystaffing.com</CompanyDetailsURL>
+    <CompanyDID>CJ123_COMPANY_DID</CompanyDID>
+  </Company>
+  <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?DID=JHT3D8649TV74ZNK0GJ&amp;DeveloperKey=XYZ_DEVKEY</JobDetailsURL>
+  <JobServiceURL>http://api.careerbuilder.com/v1/job?DID=JHT3D8649TV74ZNK0GJ&amp;DeveloperKey=XYZ_DEVKEY</JobServiceURL>
+  <SimilarJobsURL>http://www.careerbuilder.com/jobseeker/jobs/recommendedjobs.aspx?ipath=JELO&amp;job_did=JHT3D8649TV74ZNK0GJ</SimilarJobsURL>
+  <ONet>47-2211.00</ONet>
+  <ONetFriendlyTitle>Sheet Metal Workers</ONetFriendlyTitle>
+  <HostSite>US</HostSite>
+  <PostingDate>12/9/2012 12:00:00 AM</PostingDate>
+  <CanBeQuickApplied>True</CanBeQuickApplied>
+</RecommendJobResult>

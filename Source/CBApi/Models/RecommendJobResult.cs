@@ -8,9 +8,9 @@ namespace CBApi.Models {
         public double Relevancy { get; set; }
         public Location Location { get; set; }
         public Company Company { get; set; }
-        public string JobDetailsUrl { get; set; }
-        public string JobServiceUrl { get; set; }
-        public string SimilarJobsUrl { get; set; }
+        public string JobDetailsURL { get; set; }
+        public string JobServiceURL { get; set; }
+        public string SimilarJobsURL { get; set; }
         public bool CanBeQuickApplied { get; set; }
         public string ONet { get; set; }
         public string ONetFriendlyTitle { get; set; }

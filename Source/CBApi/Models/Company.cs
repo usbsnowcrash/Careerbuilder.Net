@@ -5,6 +5,6 @@ namespace CBApi.Models {
     public class Company {
         public string CompanyName { get; set; }
         public string CompanyDetailsURL { get; set; }
-        public string CompanyDid { get; set; }
+        public string CompanyDID { get; set; }
     }
 }
