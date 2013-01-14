@@ -264,6 +264,13 @@ namespace CBApi.Framework.Requests {
             _SiteEntity = value;
             return this;
         }
+
+        public IJobSearch WhereEmployeeTypes(params string[] employmentTypes) {
+            foreach (var item in employmentTypes) {
+                _EmployeeTypes.Add(item);
+            }
+            return this;
+        }
         #endregion
     }
 }
