@@ -67,6 +67,8 @@
     <Compile Include="Models\ApplicationRequirements.cs" />
     <Compile Include="Models\Bucket.cs" />
     <Compile Include="Models\AccessToken.cs" />
+    <Compile Include="Models\Facets\Facet.cs" />
+    <Compile Include="Models\Facets\Item.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RequestApplication.cs" />
     <Compile Include="Models\Response.cs" />

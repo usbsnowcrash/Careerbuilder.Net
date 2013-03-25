@@ -6,6 +6,7 @@ using CBApi.Models.Service;
 
 namespace CBApi.Framework.Requests {
     internal class JobSearchRequest : GetRequest, IJobSearch {
+
         protected bool ExcludeNationwideJobs = true;
         protected BooleanOperator _BooleanOperator = BooleanOperator.AND;
         protected List<string> _CategoryCodes = new List<string>();
@@ -30,6 +31,8 @@ namespace CBApi.Framework.Requests {
         protected bool _ExcludeNationWideJobs = true;
         protected bool _ExcludeNonTraditionalJobs = true;
         protected string _SiteEntity = "";
+        protected bool _ShowFacets;
+        protected Dictionary<FacetField, string> _Facets = new Dictionary<FacetField,string>();
 
         public JobSearchRequest(APISettings settings) : base(settings) { }
 
@@ -67,6 +70,7 @@ namespace CBApi.Framework.Requests {
             AddEmployeeTypesToRequest();
             AddPerPageToRequest();
             AddSiteEntityToRequest();
+            AddFacets();
         }
 
         private void AddEmployeeTypesToRequest() {
@@ -153,6 +157,16 @@ namespace CBApi.Framework.Requests {
         private void AddSiteEntityToRequest() {
             if (!string.IsNullOrEmpty(_SiteEntity))
                 _request.AddParameter("SiteEntity", _SiteEntity);
+        }
+        
+        private void AddFacets() {
+            if (_ShowFacets || _Facets.Count > 0) {
+                _request.AddParameter("UseFacets", "true");
+            }
+
+            foreach (var facet in _Facets) {
+                _request.AddParameter(facet.Key.ToString(), facet.Value);
+            }
         }
 
         #endregion
@@ -269,6 +283,29 @@ namespace CBApi.Framework.Requests {
             foreach (var item in employmentTypes) {
                 _EmployeeTypes.Add(item);
             }
+            return this;
+        }
+
+        public IJobSearch WhereFacets(params KeyValuePair<FacetField, string>[] facets) {
+            if (facets == null) { return this; }
+
+            foreach (var newFacet in facets) {
+                if (!string.IsNullOrWhiteSpace(newFacet.Value)) {
+                    _ShowFacets = true;
+
+                    if (_Facets.ContainsKey(newFacet.Key)) {
+                        _Facets[newFacet.Key] = newFacet.Value;
+                    } else {
+                        _Facets.Add(newFacet.Key, newFacet.Value);
+                    }
+                }
+            }
+
+            return this;
+        }
+
+        public IJobSearch ShowFacets() {
+            _ShowFacets = true;
             return this;
         }
         #endregion

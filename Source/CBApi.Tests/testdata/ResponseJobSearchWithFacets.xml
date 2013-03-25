@@ -1,0 +1,1070 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResponseJobSearch>
+  <Errors />
+  <TimeResponseSent>3/21/2013 3:26:06 PM</TimeResponseSent>
+  <TimeElapsed>0.3744288</TimeElapsed>
+  <TotalPages>214</TotalPages>
+  <TotalCount>1921</TotalCount>
+  <FirstItemIndex>1</FirstItemIndex>
+  <LastItemIndex>9</LastItemIndex>
+  <Facets>
+    <Facet JobSearchRequestParameter="FacetCategory">
+      <Item>
+        <JobSearchRequestValue>"JN004"</JobSearchRequestValue>
+        <DisplayValue>Engineering</DisplayValue>
+        <Count>1143</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN008"</JobSearchRequestValue>
+        <DisplayValue>Information Technology</DisplayValue>
+        <Count>1013</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN037"</JobSearchRequestValue>
+        <DisplayValue>Management</DisplayValue>
+        <Count>361</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN021"</JobSearchRequestValue>
+        <DisplayValue>Design</DisplayValue>
+        <Count>303</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN025"</JobSearchRequestValue>
+        <DisplayValue>QA - Quality Control</DisplayValue>
+        <Count>164</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN011"</JobSearchRequestValue>
+        <DisplayValue>Sales</DisplayValue>
+        <Count>163</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN013"</JobSearchRequestValue>
+        <DisplayValue>Skilled Labor - Trades</DisplayValue>
+        <Count>159</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN029"</JobSearchRequestValue>
+        <DisplayValue>Manufacturing</DisplayValue>
+        <Count>133</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN010"</JobSearchRequestValue>
+        <DisplayValue>Other</DisplayValue>
+        <Count>109</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN028"</JobSearchRequestValue>
+        <DisplayValue>Strategy - Planning</DisplayValue>
+        <Count>85</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN056"</JobSearchRequestValue>
+        <DisplayValue>Installation - Maint - Repair</DisplayValue>
+        <Count>81</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN048"</JobSearchRequestValue>
+        <DisplayValue>Telecommunications</DisplayValue>
+        <Count>76</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN022"</JobSearchRequestValue>
+        <DisplayValue>Entry Level</DisplayValue>
+        <Count>75</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN003"</JobSearchRequestValue>
+        <DisplayValue>Customer Service</DisplayValue>
+        <Count>65</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN005"</JobSearchRequestValue>
+        <DisplayValue>Finance</DisplayValue>
+        <Count>65</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN024"</JobSearchRequestValue>
+        <DisplayValue>Professional Services</DisplayValue>
+        <Count>62</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN020"</JobSearchRequestValue>
+        <DisplayValue>Consultant</DisplayValue>
+        <Count>54</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN001"</JobSearchRequestValue>
+        <DisplayValue>Accounting</DisplayValue>
+        <Count>38</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN009"</JobSearchRequestValue>
+        <DisplayValue>Marketing</DisplayValue>
+        <Count>37</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN006"</JobSearchRequestValue>
+        <DisplayValue>General Business</DisplayValue>
+        <Count>36</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN043"</JobSearchRequestValue>
+        <DisplayValue>Construction</DisplayValue>
+        <Count>35</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN054"</JobSearchRequestValue>
+        <DisplayValue>Automotive</DisplayValue>
+        <Count>32</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN012"</JobSearchRequestValue>
+        <DisplayValue>Science</DisplayValue>
+        <Count>31</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN019"</JobSearchRequestValue>
+        <DisplayValue>Business Development</DisplayValue>
+        <Count>29</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN032"</JobSearchRequestValue>
+        <DisplayValue>Training</DisplayValue>
+        <Count>24</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN051"</JobSearchRequestValue>
+        <DisplayValue>General Labor</DisplayValue>
+        <Count>21</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN030"</JobSearchRequestValue>
+        <DisplayValue>Legal</DisplayValue>
+        <Count>20</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN033"</JobSearchRequestValue>
+        <DisplayValue>Retail</DisplayValue>
+        <Count>20</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN002"</JobSearchRequestValue>
+        <DisplayValue>Admin - Clerical</DisplayValue>
+        <Count>18</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN016"</JobSearchRequestValue>
+        <DisplayValue>Purchasing - Procurement</DisplayValue>
+        <Count>18</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN023"</JobSearchRequestValue>
+        <DisplayValue>Health Care</DisplayValue>
+        <Count>18</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN031"</JobSearchRequestValue>
+        <DisplayValue>Education</DisplayValue>
+        <Count>18</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN007"</JobSearchRequestValue>
+        <DisplayValue>Human Resources</DisplayValue>
+        <Count>17</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN026"</JobSearchRequestValue>
+        <DisplayValue>Research</DisplayValue>
+        <Count>17</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN015"</JobSearchRequestValue>
+        <DisplayValue>Inventory</DisplayValue>
+        <Count>16</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN017"</JobSearchRequestValue>
+        <DisplayValue>Facilities</DisplayValue>
+        <Count>16</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN044"</JobSearchRequestValue>
+        <DisplayValue>Transportation</DisplayValue>
+        <Count>13</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN038"</JobSearchRequestValue>
+        <DisplayValue>Banking</DisplayValue>
+        <Count>12</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN034"</JobSearchRequestValue>
+        <DisplayValue>Insurance</DisplayValue>
+        <Count>11</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"JN057"</JobSearchRequestValue>
+        <DisplayValue>Real Estate</DisplayValue>
+        <Count>11</Count>
+      </Item>
+    </Facet>
+    <Facet JobSearchRequestParameter="FacetCompany">
+      <Item>
+        <JobSearchRequestValue>"The Mathworks Inc"</JobSearchRequestValue>
+        <DisplayValue>The Mathworks Inc</DisplayValue>
+        <Count>437</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"AT&amp;T IT/Engineering/Technology"</JobSearchRequestValue>
+        <DisplayValue>AT&amp;T IT/Engineering/Technology</DisplayValue>
+        <Count>47</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Adecco Technical"</JobSearchRequestValue>
+        <DisplayValue>Adecco Technical</DisplayValue>
+        <Count>39</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Randstad Technologies"</JobSearchRequestValue>
+        <DisplayValue>Randstad Technologies</DisplayValue>
+        <Count>29</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Visionaire Partners"</JobSearchRequestValue>
+        <DisplayValue>Visionaire Partners</DisplayValue>
+        <Count>25</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Robert Half Technology"</JobSearchRequestValue>
+        <DisplayValue>Robert Half Technology</DisplayValue>
+        <Count>22</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"AT&amp;T College"</JobSearchRequestValue>
+        <DisplayValue>AT&amp;T College</DisplayValue>
+        <Count>19</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Aerotek"</JobSearchRequestValue>
+        <DisplayValue>Aerotek</DisplayValue>
+        <Count>19</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Collabera Inc."</JobSearchRequestValue>
+        <DisplayValue>Collabera Inc.</DisplayValue>
+        <Count>18</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Kelly Engineering Resources"</JobSearchRequestValue>
+        <DisplayValue>Kelly Engineering Resources</DisplayValue>
+        <Count>18</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Aptean"</JobSearchRequestValue>
+        <DisplayValue>Aptean</DisplayValue>
+        <Count>17</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"CareerBuilder-US"</JobSearchRequestValue>
+        <DisplayValue>CareerBuilder-US</DisplayValue>
+        <Count>17</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"L-3 Communications Display Systems"</JobSearchRequestValue>
+        <DisplayValue>L-3 Communications Display Systems</DisplayValue>
+        <Count>17</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"TEKsystems, Inc"</JobSearchRequestValue>
+        <DisplayValue>TEKsystems, Inc</DisplayValue>
+        <Count>17</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"ViaSat, Inc."</JobSearchRequestValue>
+        <DisplayValue>ViaSat, Inc.</DisplayValue>
+        <Count>17</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Cox Communications"</JobSearchRequestValue>
+        <DisplayValue>Cox Communications</DisplayValue>
+        <Count>16</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Randstad Engineering"</JobSearchRequestValue>
+        <DisplayValue>Randstad Engineering</DisplayValue>
+        <Count>16</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"EarthLink, Inc"</JobSearchRequestValue>
+        <DisplayValue>EarthLink, Inc</DisplayValue>
+        <Count>15</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Hunter Technical Resources"</JobSearchRequestValue>
+        <DisplayValue>Hunter Technical Resources</DisplayValue>
+        <Count>15</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"NCR"</JobSearchRequestValue>
+        <DisplayValue>NCR</DisplayValue>
+        <Count>15</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Rose International"</JobSearchRequestValue>
+        <DisplayValue>Rose International</DisplayValue>
+        <Count>15</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"The Intersect Group"</JobSearchRequestValue>
+        <DisplayValue>The Intersect Group</DisplayValue>
+        <Count>14</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Dyson"</JobSearchRequestValue>
+        <DisplayValue>Dyson</DisplayValue>
+        <Count>13</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"CBRE"</JobSearchRequestValue>
+        <DisplayValue>CBRE</DisplayValue>
+        <Count>12</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Experis"</JobSearchRequestValue>
+        <DisplayValue>Experis</DisplayValue>
+        <Count>12</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Manhattan Associates"</JobSearchRequestValue>
+        <DisplayValue>Manhattan Associates</DisplayValue>
+        <Count>12</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Bartech Group"</JobSearchRequestValue>
+        <DisplayValue>Bartech Group</DisplayValue>
+        <Count>11</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"DISYS"</JobSearchRequestValue>
+        <DisplayValue>DISYS</DisplayValue>
+        <Count>11</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Kimberly Clark"</JobSearchRequestValue>
+        <DisplayValue>Kimberly Clark</DisplayValue>
+        <Count>11</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"MDI Group"</JobSearchRequestValue>
+        <DisplayValue>MDI Group</DisplayValue>
+        <Count>10</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Tires Plus"</JobSearchRequestValue>
+        <DisplayValue>Tires Plus</DisplayValue>
+        <Count>10</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"AT&amp;T Business Solutions"</JobSearchRequestValue>
+        <DisplayValue>AT&amp;T Business Solutions</DisplayValue>
+        <Count>9</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Artech Information Systems"</JobSearchRequestValue>
+        <DisplayValue>Artech Information Systems</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"BlueStream Professional Services"</JobSearchRequestValue>
+        <DisplayValue>BlueStream Professional Services</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Confidential"</JobSearchRequestValue>
+        <DisplayValue>Confidential</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Fiserv"</JobSearchRequestValue>
+        <DisplayValue>Fiserv</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Intelsat Corporation"</JobSearchRequestValue>
+        <DisplayValue>Intelsat Corporation</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Philips Electronics"</JobSearchRequestValue>
+        <DisplayValue>Philips Electronics</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Verint"</JobSearchRequestValue>
+        <DisplayValue>Verint</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Cbeyond"</JobSearchRequestValue>
+        <DisplayValue>Cbeyond</DisplayValue>
+        <Count>7</Count>
+      </Item>
+    </Facet>
+    <Facet JobSearchRequestParameter="FacetCity">
+      <Item>
+        <JobSearchRequestValue>"Atlanta"</JobSearchRequestValue>
+        <DisplayValue>Atlanta</DisplayValue>
+        <Count>1266</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Alpharetta"</JobSearchRequestValue>
+        <DisplayValue>Alpharetta</DisplayValue>
+        <Count>219</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Norcross"</JobSearchRequestValue>
+        <DisplayValue>Norcross</DisplayValue>
+        <Count>99</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Duluth"</JobSearchRequestValue>
+        <DisplayValue>Duluth</DisplayValue>
+        <Count>31</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Marietta"</JobSearchRequestValue>
+        <DisplayValue>Marietta</DisplayValue>
+        <Count>27</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Kennesaw"</JobSearchRequestValue>
+        <DisplayValue>Kennesaw</DisplayValue>
+        <Count>25</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Suwanee"</JobSearchRequestValue>
+        <DisplayValue>Suwanee</DisplayValue>
+        <Count>19</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Lawrenceville"</JobSearchRequestValue>
+        <DisplayValue>Lawrenceville</DisplayValue>
+        <Count>14</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Roswell"</JobSearchRequestValue>
+        <DisplayValue>Roswell</DisplayValue>
+        <Count>14</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Peachtree City"</JobSearchRequestValue>
+        <DisplayValue>Peachtree City</DisplayValue>
+        <Count>13</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Conyers"</JobSearchRequestValue>
+        <DisplayValue>Conyers</DisplayValue>
+        <Count>12</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Johns Creek"</JobSearchRequestValue>
+        <DisplayValue>Johns Creek</DisplayValue>
+        <Count>11</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Ellenwood"</JobSearchRequestValue>
+        <DisplayValue>Ellenwood</DisplayValue>
+        <Count>9</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Sandy Springs"</JobSearchRequestValue>
+        <DisplayValue>Sandy Springs</DisplayValue>
+        <Count>9</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"East Point"</JobSearchRequestValue>
+        <DisplayValue>East Point</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Tucker"</JobSearchRequestValue>
+        <DisplayValue>Tucker</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Smyrna"</JobSearchRequestValue>
+        <DisplayValue>Smyrna</DisplayValue>
+        <Count>6</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Decatur"</JobSearchRequestValue>
+        <DisplayValue>Decatur</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Dunwoody"</JobSearchRequestValue>
+        <DisplayValue>Dunwoody</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Newnan"</JobSearchRequestValue>
+        <DisplayValue>Newnan</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Stone Mountain"</JobSearchRequestValue>
+        <DisplayValue>Stone Mountain</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Chamblee"</JobSearchRequestValue>
+        <DisplayValue>Chamblee</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"College Park"</JobSearchRequestValue>
+        <DisplayValue>College Park</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Cumming"</JobSearchRequestValue>
+        <DisplayValue>Cumming</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Griffin"</JobSearchRequestValue>
+        <DisplayValue>Griffin</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Austell"</JobSearchRequestValue>
+        <DisplayValue>Austell</DisplayValue>
+        <Count>3</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Douglasville"</JobSearchRequestValue>
+        <DisplayValue>Douglasville</DisplayValue>
+        <Count>3</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Snellville"</JobSearchRequestValue>
+        <DisplayValue>Snellville</DisplayValue>
+        <Count>3</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Druid Hills"</JobSearchRequestValue>
+        <DisplayValue>Druid Hills</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Forest Park"</JobSearchRequestValue>
+        <DisplayValue>Forest Park</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Gresham Park"</JobSearchRequestValue>
+        <DisplayValue>Gresham Park</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Lithia Springs"</JobSearchRequestValue>
+        <DisplayValue>Lithia Springs</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Loganville"</JobSearchRequestValue>
+        <DisplayValue>Loganville</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"McDonough"</JobSearchRequestValue>
+        <DisplayValue>McDonough</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Morrow"</JobSearchRequestValue>
+        <DisplayValue>Morrow</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"North Decatur"</JobSearchRequestValue>
+        <DisplayValue>North Decatur</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Woodstock"</JobSearchRequestValue>
+        <DisplayValue>Woodstock</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Acworth"</JobSearchRequestValue>
+        <DisplayValue>Acworth</DisplayValue>
+        <Count>1</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Fair Oaks"</JobSearchRequestValue>
+        <DisplayValue>Fair Oaks</DisplayValue>
+        <Count>1</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Fairburn"</JobSearchRequestValue>
+        <DisplayValue>Fairburn</DisplayValue>
+        <Count>1</Count>
+      </Item>
+    </Facet>
+    <Facet JobSearchRequestParameter="FacetState">
+      <Item>
+        <JobSearchRequestValue>"GA"</JobSearchRequestValue>
+        <DisplayValue>Georgia</DisplayValue>
+        <Count>1868</Count>
+      </Item>
+    </Facet>
+    <Facet JobSearchRequestParameter="FacetCityState">
+      <Item>
+        <JobSearchRequestValue>"Atlanta,GA"</JobSearchRequestValue>
+        <DisplayValue>Atlanta,GA</DisplayValue>
+        <Count>1267</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Alpharetta,GA"</JobSearchRequestValue>
+        <DisplayValue>Alpharetta,GA</DisplayValue>
+        <Count>219</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Norcross,GA"</JobSearchRequestValue>
+        <DisplayValue>Norcross,GA</DisplayValue>
+        <Count>142</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Duluth,GA"</JobSearchRequestValue>
+        <DisplayValue>Duluth,GA</DisplayValue>
+        <Count>31</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Marietta,GA"</JobSearchRequestValue>
+        <DisplayValue>Marietta,GA</DisplayValue>
+        <Count>28</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Kennesaw,GA"</JobSearchRequestValue>
+        <DisplayValue>Kennesaw,GA</DisplayValue>
+        <Count>25</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Suwanee,GA"</JobSearchRequestValue>
+        <DisplayValue>Suwanee,GA</DisplayValue>
+        <Count>19</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Lawrenceville,GA"</JobSearchRequestValue>
+        <DisplayValue>Lawrenceville,GA</DisplayValue>
+        <Count>14</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Roswell,GA"</JobSearchRequestValue>
+        <DisplayValue>Roswell,GA</DisplayValue>
+        <Count>14</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Peachtree City,GA"</JobSearchRequestValue>
+        <DisplayValue>Peachtree City,GA</DisplayValue>
+        <Count>13</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Conyers,GA"</JobSearchRequestValue>
+        <DisplayValue>Conyers,GA</DisplayValue>
+        <Count>12</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Johns Creek,GA"</JobSearchRequestValue>
+        <DisplayValue>Johns Creek,GA</DisplayValue>
+        <Count>11</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Ellenwood,GA"</JobSearchRequestValue>
+        <DisplayValue>Ellenwood,GA</DisplayValue>
+        <Count>9</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Sandy Springs,GA"</JobSearchRequestValue>
+        <DisplayValue>Sandy Springs,GA</DisplayValue>
+        <Count>9</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Tucker,GA"</JobSearchRequestValue>
+        <DisplayValue>Tucker,GA</DisplayValue>
+        <Count>9</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"East Point,GA"</JobSearchRequestValue>
+        <DisplayValue>East Point,GA</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Smyrna,GA"</JobSearchRequestValue>
+        <DisplayValue>Smyrna,GA</DisplayValue>
+        <Count>6</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Decatur,GA"</JobSearchRequestValue>
+        <DisplayValue>Decatur,GA</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Dunwoody,GA"</JobSearchRequestValue>
+        <DisplayValue>Dunwoody,GA</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Newnan,GA"</JobSearchRequestValue>
+        <DisplayValue>Newnan,GA</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Stone Mountain,GA"</JobSearchRequestValue>
+        <DisplayValue>Stone Mountain,GA</DisplayValue>
+        <Count>5</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Chamblee,GA"</JobSearchRequestValue>
+        <DisplayValue>Chamblee,GA</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"College Park,GA"</JobSearchRequestValue>
+        <DisplayValue>College Park,GA</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Cumming,GA"</JobSearchRequestValue>
+        <DisplayValue>Cumming,GA</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Griffin,GA"</JobSearchRequestValue>
+        <DisplayValue>Griffin,GA</DisplayValue>
+        <Count>4</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Aiken,SC"</JobSearchRequestValue>
+        <DisplayValue>Aiken,SC</DisplayValue>
+        <Count>3</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Austell,GA"</JobSearchRequestValue>
+        <DisplayValue>Austell,GA</DisplayValue>
+        <Count>3</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Douglasville,GA"</JobSearchRequestValue>
+        <DisplayValue>Douglasville,GA</DisplayValue>
+        <Count>3</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Snellville,GA"</JobSearchRequestValue>
+        <DisplayValue>Snellville,GA</DisplayValue>
+        <Count>3</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Druid Hills,GA"</JobSearchRequestValue>
+        <DisplayValue>Druid Hills,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Forest Park,GA"</JobSearchRequestValue>
+        <DisplayValue>Forest Park,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Gresham Park,GA"</JobSearchRequestValue>
+        <DisplayValue>Gresham Park,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Lithia Springs,GA"</JobSearchRequestValue>
+        <DisplayValue>Lithia Springs,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Loganville,GA"</JobSearchRequestValue>
+        <DisplayValue>Loganville,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"McDonough,GA"</JobSearchRequestValue>
+        <DisplayValue>McDonough,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Morrow,GA"</JobSearchRequestValue>
+        <DisplayValue>Morrow,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"North Decatur,GA"</JobSearchRequestValue>
+        <DisplayValue>North Decatur,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Prescott,AR"</JobSearchRequestValue>
+        <DisplayValue>Prescott,AR</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Woodstock,GA"</JobSearchRequestValue>
+        <DisplayValue>Woodstock,GA</DisplayValue>
+        <Count>2</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>"Acworth,GA"</JobSearchRequestValue>
+        <DisplayValue>Acworth,GA</DisplayValue>
+        <Count>1</Count>
+      </Item>
+    </Facet>
+    <Facet JobSearchRequestParameter="FacetPay">
+      <Item>
+        <JobSearchRequestValue>[*****0]</JobSearchRequestValue>
+        <DisplayValue>Unspecified</DisplayValue>
+        <Count>1648</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>[1*****14999]</JobSearchRequestValue>
+        <DisplayValue>$1 - &lt;$15k</DisplayValue>
+        <Count>92</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>[15000*****29999]</JobSearchRequestValue>
+        <DisplayValue>$15k - &lt;$30k</DisplayValue>
+        <Count>1</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>[30000*****49999]</JobSearchRequestValue>
+        <DisplayValue>$30k - &lt;$50k</DisplayValue>
+        <Count>8</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>[50000*****74999]</JobSearchRequestValue>
+        <DisplayValue>$50k - &lt;$75k</DisplayValue>
+        <Count>47</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>[75000*****99999]</JobSearchRequestValue>
+        <DisplayValue>$75k - &lt;$100k</DisplayValue>
+        <Count>53</Count>
+      </Item>
+      <Item>
+        <JobSearchRequestValue>[100000*****]</JobSearchRequestValue>
+        <DisplayValue>Over $100,000</DisplayValue>
+        <Count>72</Count>
+      </Item>
+    </Facet>
+    <Facet JobSearchRequestParameter="FacetNormalizedCompanyDID" />
+  </Facets>
+  <Results>
+    <JobSearchResult>
+      <Company>AKS, Inc</Company>
+      <CompanyDID></CompanyDID>
+      <CompanyDetailsURL />
+      <DID>JHT71368BMZ38TGK6Q2</DID>
+      <OnetCode>17-2141.00</OnetCode>
+      <ONetFriendlyTitle>Mechanical Engineers</ONetFriendlyTitle>
+      <DescriptionTeaser>HVAC Engineer Working in a fast pace team environment with a group of Mechanical ...  HVAC Engineer EIT/PE Plus Applicants should have 2 years plus...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JHT71368BMZ38TGK6Q2</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHT71368BMZ38TGK6Q2&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Atlanta</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>3/14/2013</PostedDate>
+      <Pay>$55k - $80k/year</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHT71368BMZ38TGK6Q2</SimilarJobsURL>
+      <JobTitle>HVAC ENGINEER</JobTitle>
+      <CompanyImageURL></CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Able Engineering Services</Company>
+      <CompanyDID></CompanyDID>
+      <CompanyDetailsURL />
+      <DID>JHT46167G3GQPN4GF6Y</DID>
+      <OnetCode>49-9042.00</OnetCode>
+      <ONetFriendlyTitle>Maintenance and Repair Workers</ONetFriendlyTitle>
+      <DescriptionTeaser>Building Engineer JOB SUMMARY:Responsible for maintenance and repairs to the buildings ...  Experience that is commensurate with the specific facility...</DescriptionTeaser>
+      <Distance>7 miles</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JHT46167G3GQPN4GF6Y</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHT46167G3GQPN4GF6Y&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Atlanta</Location>
+      <LocationLatitude>33.8675</LocationLatitude>
+      <LocationLongitude>-84.4236</LocationLongitude>
+      <PostedDate>3/18/2013</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHT46167G3GQPN4GF6Y</SimilarJobsURL>
+      <JobTitle>Building Engineer</JobTitle>
+      <CompanyImageURL></CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Bartech Group</Company>
+      <CompanyDID>c8g5xl6rqnqy6pmmtkb</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C8G5XL6RQNQY6PMMTKB/Bartech-Group/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>JB71S364NQ0X8VY51WD</DID>
+      <OnetCode>15-1071.00</OnetCode>
+      <ONetFriendlyTitle>Network and Computer Systems Administrators</ONetFriendlyTitle>
+      <DescriptionTeaser>IT Network Engineer (Network Administrator) Job DescriptionBartech Group, a leading global ...  IT Network Engineer (Information Technology / Network...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JB71S364NQ0X8VY51WD</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JB71S364NQ0X8VY51WD&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Various US Locations</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>2/22/2013</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JB71S364NQ0X8VY51WD</SimilarJobsURL>
+      <JobTitle>IT Network Engineer (Network Administrator)</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/MediaManagement/7P/MVJ81466WSNX4T1SG7P.gif</CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Parkway Properties, Inc.</Company>
+      <CompanyDID></CompanyDID>
+      <CompanyDetailsURL />
+      <DID>JHT1D66BP5SXFX7KZQX</DID>
+      <OnetCode>49-9042.00</OnetCode>
+      <ONetFriendlyTitle>Maintenance and Repair Workers</ONetFriendlyTitle>
+      <DescriptionTeaser>Parkway has an immediate opening for a Building Engineer in downtown Atlanta. This position ...   engineer or related training• Strong communication,...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JHT1D66BP5SXFX7KZQX</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHT1D66BP5SXFX7KZQX&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Atlanta</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>3/11/2013</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHT1D66BP5SXFX7KZQX</SimilarJobsURL>
+      <JobTitle>Building Engineer</JobTitle>
+      <CompanyImageURL></CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>AKS, Inc</Company>
+      <CompanyDID></CompanyDID>
+      <CompanyDetailsURL />
+      <DID>JHS8B379CPXFHMR5QXY</DID>
+      <OnetCode>17-2112.00</OnetCode>
+      <ONetFriendlyTitle>Industrial Engineers</ONetFriendlyTitle>
+      <DescriptionTeaser>PLC Controls Engineer Controls Project Engineer is responsible, individually or as a team ...  PLC Controls Engineer -Bachelor’s degree in related...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JHS8B379CPXFHMR5QXY</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHS8B379CPXFHMR5QXY&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Atlanta</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>3/21/2013</PostedDate>
+      <Pay>$65k - $85k/year</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHS8B379CPXFHMR5QXY</SimilarJobsURL>
+      <JobTitle>PLC Controls Engineer</JobTitle>
+      <CompanyImageURL></CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Kinetix</Company>
+      <CompanyDID>chs8dc65hxy8q17glb6</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/CHS8DC65HXY8Q17GLB6/Kinetix/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>J3F3446404HM41Y3X2M</DID>
+      <OnetCode>15-1071.00</OnetCode>
+      <ONetFriendlyTitle>Network and Computer Systems Administrators</ONetFriendlyTitle>
+      <DescriptionTeaser>We are seeking a NOC Network Engineer on behalf of one of our clients in the Perimeter area of ...   within a fast-paced   environment.Tags: NOC...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=J3F3446404HM41Y3X2M</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=J3F3446404HM41Y3X2M&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Atlanta</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>2/22/2013</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=J3F3446404HM41Y3X2M</SimilarJobsURL>
+      <JobTitle>NOC Network Engineer</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/MediaManagement/Y7/MWV7G85WXH96NRDB6Y7.jpg</CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>DISYS</Company>
+      <CompanyDID>c7x3336nbg18m66dlvt</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/C7X3336NBG18M66DLVT/DISYS/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>JHT7WW5W66T7KB8YF96</DID>
+      <OnetCode>15-1071.00</OnetCode>
+      <ONetFriendlyTitle>Network and Computer Systems Administrators</ONetFriendlyTitle>
+      <DescriptionTeaser>Network Engineer / AdministratorOur client in Suwanee, GA is looking for a solid Network ...  Network Engineer / Administrator should have the...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JHT7WW5W66T7KB8YF96</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHT7WW5W66T7KB8YF96&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Atlanta</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>2/28/2013</PostedDate>
+      <Pay>$45.00 - $50.00/hour</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHT7WW5W66T7KB8YF96</SimilarJobsURL>
+      <JobTitle>Network Engineer</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/MediaManagement/81/MRQ64T76FJNW313ZF81.jpg</CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>Exactsource</Company>
+      <CompanyDID>chv4126dnvc2l6lcd3h</CompanyDID>
+      <CompanyDetailsURL>http://www.careerbuilder.com/Jobs/Company/CHV4126DNVC2L6LCD3H/Exactsource/?sc_cmp1=13_JobRes_ComDet</CompanyDetailsURL>
+      <DID>JHM32773G0MMBQKH3YN</DID>
+      <OnetCode>17-2171.00</OnetCode>
+      <ONetFriendlyTitle>Petroleum Engineers</ONetFriendlyTitle>
+      <DescriptionTeaser>*Non Civil Engineers need not applyClient DescriptionOur Client is a full ...   Engineering, Electrical Engineering, Process/Chemical Engineering...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JHM32773G0MMBQKH3YN</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHM32773G0MMBQKH3YN&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - Atlanta</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>3/7/2013</PostedDate>
+      <Pay>$80k - $110k/year</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHM32773G0MMBQKH3YN</SimilarJobsURL>
+      <JobTitle>Midstream Oil &amp; Gas Pipeline Engineer (PE License required)</JobTitle>
+      <CompanyImageURL>http://emj.icbdr.com/MediaManagement/93/MVT4X56L7P6Y03S2493.jpg</CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+    <JobSearchResult>
+      <Company>The River Group</Company>
+      <CompanyDID></CompanyDID>
+      <CompanyDetailsURL />
+      <DID>JHR1MM6K6SD304GNP15</DID>
+      <OnetCode>41-9031.00</OnetCode>
+      <ONetFriendlyTitle>Sales Engineers</ONetFriendlyTitle>
+      <DescriptionTeaser>Title:                         Sales Engineer  Location:                 Atlanta, GA ...  Qualifications: The successful candidate will have a...</DescriptionTeaser>
+      <Distance>Nearby</Distance>
+      <EmploymentType>Full-Time</EmploymentType>
+      <JobDetailsURL>http://api.careerbuilder.com/v1/joblink?TrackingID=CBWG7KSY&amp;DID=JHR1MM6K6SD304GNP15</JobDetailsURL>
+      <JobServiceURL>https://api.careerbuilder.com/v1/job?DID=JHR1MM6K6SD304GNP15&amp;DeveloperKey=WDRF81661JM5WPB63DGJ</JobServiceURL>
+      <Location>GA - North Georgia</Location>
+      <LocationLatitude>33.74831</LocationLatitude>
+      <LocationLongitude>-84.39111</LocationLongitude>
+      <PostedDate>3/20/2013</PostedDate>
+      <Pay>N/A</Pay>
+      <SimilarJobsURL>http://www.careerbuilder.com/Jobs/SimilarJobs.aspx?ipath=JELO&amp;job_did=JHR1MM6K6SD304GNP15</SimilarJobsURL>
+      <JobTitle>Sales Engineer - Account Representative</JobTitle>
+      <CompanyImageURL></CompanyImageURL>
+      <HostSite>US</HostSite>
+    </JobSearchResult>
+  </Results>
+  <SearchMetaData>
+    <SolrQuery>((searchtext.tlem_i:en♀♥♂engineer)) AND (_query_:"{!frange l=0 u=0.280329829863092}sqedist(latitude,longitude,33.748,-84.391)" OR geography.wsdt_i:NTUS OR geography.wsdt_i:RGSE OR geography.wsdt_i:STGA)</SolrQuery>
+    <SOLRFilter>;;mastercommunitylist.wsdt_is:"CMAL" AND mastercommunitylist.wsdt_is:"cmpub" AND NOT mastercommunitylist.wsdt_is:cmmlm AND prenddate.dt_is:[2013-03-21T04:00:00Z TO *]</SOLRFilter>
+    <ServerURL>http://solrjob.qtw.cbdr.com:31000/solr/core1/select/?defType=cbqp&amp;fbweights=searchtext.tlem_i%3a%3a1%3a3%3b5%3a1.5%3b6%3a0.5%3b7%3a2%3b%3bsearchtext_exact.t_i%3a%3a1%3a3%3b5%3a1.5%3b6%3a0.5%3b7%3a2%3b%3bmatchcontent.cdt_i%3a%3a1%3a8%3b2%3a5.36%3b3%3a3.38%3b4%3a1.95%3b6%3a0.422%3b7%3a0.125%3b8%3a0.0156%3b%3bmultipleonet.cdt_i%3a%3a1%3a50%3b2%3a51%3b3%3a52%3b4%3a53%3b5%3a54%3b6%3a55%3b7%3a56%3b8%3a57%3b9%3a58%3b10%3a59%3b11%3a60%3b12%3a61%3b13%3a62%3b14%3a63%3b15%3a64%3b16%3a65%3b17%3a66%3b18%3a67%3b19%3a68%3b20%3a69%3b21%3a70%3b22%3a71%3b23%3a72%3b24%3a73%3b25%3a74%3b26%3a75%3b27%3a76%3b28%3a77%3b29%3a78%3b30%3a79%3b31%3a80%3b32%3a81%3b33%3a82%3b34%3a83%3b35%3a84%3b36%3a85%3b37%3a86%3b38%3a87%3b39%3a88%3b40%3a89%3b41%3a90%3b42%3a91%3b43%3a92%3b44%3a93%3b45%3a94%3b46%3a95%3b47%3a96%3b48%3a97%3b49%3a98%3b50%3a99%3b51%3a100%3b%3bclassifiedjobtitle.cdt_i%3a%3a0%3a0%3b2%3a2%3b3%3a3%3b4%3a4%3b5%3a5%3b6%3a6%3b7%3a7%3b8%3a8%3b9%3a9%3b10%3a10%3b11%3a11%3b12%3a12%3b13%3a13%3b14%3a14%3b15%3a15%3b16%3a16%3b17%3a17%3b18%3a18%3b19%3a19%3b20%3a20%3b21%3a21%3b22%3a22%3b23%3a23%3b24%3a24%3b25%3a25%3b26%3a26%3b27%3a27%3b28%3a28%3b29%3a29%3b30%3a30%3b31%3a31%3b32%3a32%3b33%3a33%3b34%3a34%3b35%3a35%3b36%3a36%3b37%3a37%3b38%3a38%3b39%3a39%3b40%3a40%3b41%3a41%3b42%3a42%3b43%3a43%3b44%3a44%3b45%3a45%3b46%3a46%3b47%3a47%3b48%3a48%3b49%3a49%3b50%3a50%3b51%3a51%3b52%3a52%3b53%3a53%3b54%3a54%3b55%3a55%3b56%3a56%3b57%3a57%3b58%3a58%3b59%3a59%3b60%3a60%3b61%3a61%3b62%3a62%3b63%3a63%3b64%3a64%3b65%3a65%3b66%3a66%3b67%3a67%3b68%3a68%3b69%3a69%3b70%3a70%3b71%3a71%3b72%3a72%3b73%3a73%3b74%3a74%3b75%3a75%3b76%3a76%3b77%3a77%3b78%3a78%3b79%3a79%3b80%3a80%3b81%3a81%3b82%3a82%3b83%3a83%3b84%3a84%3b85%3a85%3b86%3a86%3b87%3a87%3b88%3a88%3b89%3a89%3b90%3a90%3b91%3a91%3b92%3a92%3b93%3a93%3b94%3a94%3b95%3a95%3b96%3a96%3b97%3a97%3b98%3a98%3b99%3a99%3b100%3a100&amp;cbscore.hitmap.default=0%3a0%3b1%3a14%3b2%3a16.5%3b3%3a19%3b4%3a21.5%3b5-16%3a24%3b17-MAX%3a0&amp;cbscore.type=hitmap&amp;cbscore.boostexact=true&amp;q.op=AND&amp;fq=mastercommunitylist.wsdt_is%3a%22CMAL%22+AND+mastercommunitylist.wsdt_is%3a%22cmpub%22+AND+NOT+mastercommunitylist.wsdt_is%3acmmlm+AND+prenddate.dt_is%3a%5b2013-03-21T04%3a00%3a00Z+TO+*%5d&amp;facet.field=%7b!key%3d%22skilldids%22%7dskilldids.scdt_i&amp;f.skilldids.scdt_i.facet.sort=count&amp;f.skilldids.scdt_i.facet.limit=50&amp;f.skilldids.scdt_i.facet.mincount=1&amp;f.skilldids.scdt_i.facet.missing=false&amp;f.skilldids.scdt_i.facet.method=fc&amp;facet.field=%7b!key%3d%22certificationdids%22%7dcertificationdids.scdt_i&amp;f.certificationdids.scdt_i.facet.sort=count&amp;f.certificationdids.scdt_i.facet.limit=50&amp;f.certificationdids.scdt_i.facet.mincount=1&amp;f.certificationdids.scdt_i.facet.missing=false&amp;f.certificationdids.scdt_i.facet.method=fc&amp;facet.field=%7b!key%3d%22countryname%22%7dcountrynav.ms_i&amp;f.countrynav.ms_i.facet.sort=count&amp;f.countrynav.ms_i.facet.limit=40&amp;f.countrynav.ms_i.facet.mincount=1&amp;f.countrynav.ms_i.facet.missing=false&amp;f.countrynav.ms_i.facet.method=fc&amp;facet.field=%7b!key%3d%22userjobtypelist%22%7duserjobtypelistnav.mwsdt_is&amp;f.userjobtypelistnav.mwsdt_is.facet.sort=count&amp;f.userjobtypelistnav.mwsdt_is.facet.limit=40&amp;f.userjobtypelistnav.mwsdt_is.facet.mincount=1&amp;f.userjobtypelistnav.mwsdt_is.facet.missing=false&amp;f.userjobtypelistnav.mwsdt_is.facet.method=fc&amp;facet.field=%7b!key%3d%22contactcompany%22%7dcontactcompanynav.ms_i&amp;f.contactcompanynav.ms_i.facet.sort=count&amp;f.contactcompanynav.ms_i.facet.limit=40&amp;f.contactcompanynav.ms_i.facet.mincount=1&amp;f.contactcompanynav.ms_i.facet.missing=false&amp;f.contactcompanynav.ms_i.facet.method=fc&amp;facet.field=%7b!key%3d%22skilltags%22%7dskilltags.scdt_is&amp;f.skilltags.scdt_is.facet.sort=count&amp;f.skilltags.scdt_is.facet.limit=50&amp;f.skilltags.scdt_is.facet.mincount=1&amp;f.skilltags.scdt_is.facet.missing=false&amp;f.skilltags.scdt_is.facet.method=fc&amp;facet.field=%7b!key%3d%22jobtitlenorm%22%7djobtitlenav.ms_i&amp;f.jobtitlenav.ms_i.facet.sort=count&amp;f.jobtitlenav.ms_i.facet.limit=40&amp;f.jobtitlenav.ms_i.facet.mincount=1&amp;f.jobtitlenav.ms_i.facet.missing=false&amp;f.jobtitlenav.ms_i.facet.method=fc&amp;facet.field=%7b!key%3d%22statename%22%7dstatenav.ms_i&amp;f.statenav.ms_i.facet.sort=count&amp;f.statenav.ms_i.facet.limit=60&amp;f.statenav.ms_i.facet.mincount=1&amp;f.statenav.ms_i.facet.missing=false&amp;f.statenav.ms_i.facet.method=fc&amp;facet.field=%7b!key%3d%22cityname%22%7dcitynav.ms_i&amp;f.citynav.ms_i.facet.sort=count&amp;f.citynav.ms_i.facet.limit=40&amp;f.citynav.ms_i.facet.mincount=1&amp;f.citynav.ms_i.facet.missing=false&amp;f.citynav.ms_i.facet.method=fc&amp;facet.field=%7b!key%3d%22citystate%22%7dcitystatedisplay.ms_i&amp;f.citystatedisplay.ms_i.facet.sort=count&amp;f.citystatedisplay.ms_i.facet.limit=40&amp;f.citystatedisplay.ms_i.facet.mincount=1&amp;f.citystatedisplay.ms_i.facet.missing=false&amp;f.citystatedisplay.ms_i.facet.method=fc&amp;facet.query=%7b!key%3d%22payhigh%3a%5b*+0%5d%22%7dpayhigh.i_is%3a%5b*+0%5d&amp;facet.query=%7b!key%3d%22payhigh%3a%5b1+14999%5d%22%7dpayhigh.i_is%3a%5b1+14999%5d&amp;facet.query=%7b!key%3d%22payhigh%3a%5b15000+29999%5d%22%7dpayhigh.i_is%3a%5b15000+29999%5d&amp;facet.query=%7b!key%3d%22payhigh%3a%5b30000+49999%5d%22%7dpayhigh.i_is%3a%5b30000+49999%5d&amp;facet.query=%7b!key%3d%22payhigh%3a%5b50000+74999%5d%22%7dpayhigh.i_is%3a%5b50000+74999%5d&amp;facet.query=%7b!key%3d%22payhigh%3a%5b75000+99999%5d%22%7dpayhigh.i_is%3a%5b75000+99999%5d&amp;facet.query=%7b!key%3d%22payhigh%3a%5b100000+*%5d%22%7dpayhigh.i_is%3a%5b100000+*%5d&amp;facet=true&amp;hl=on&amp;hl.fl=jobdesc.tlem_is%2cjobreq.tlem_is&amp;hl.mergeContiguous=true&amp;hl.fragsize=100&amp;hl.simple.pre=%3cb%3e&amp;hl.simple.post=%3c%2fb%3e&amp;start=0&amp;rows=9&amp;q=(((searchtext.tlem_i%3aen%e2%99%80%e2%99%a5%e2%99%82engineer))+AND+(_query_%3a%22%7b!frange+l%3d0+u%3d0.280329829863092%7dsqedist(latitude%2clongitude%2c33.748%2c-84.391)%22+OR+geography.wsdt_i%3aNTUS+OR+geography.wsdt_i%3aRGSE+OR+geography.wsdt_i%3aSTGA))+AND+_val_%3a%22product(appliespersearch.d_i%2c1000)%22&amp;debugQuery=false&amp;fl=*%2cpartnerid.s_is%3afield(partnerid.s_is)%2cnormalizedretrievablecompanydid.s_is%3afield(normalizedretrievablecompanydid.s_is)%2cposterdid.s_is%3afield(posterdid.s_is)%2chostsite.s_is%3afield(hostsite.s_is)%2ccbtype.s_is%3afield(cbtype.s_is)%2cstate.s_is%3afield(state.s_is)%2ccountry.s_is%3afield(country.s_is)%2caccountdid.s_is%3afield(accountdid.s_is)%2ccompanydid.s_is%3afield(companydid.s_is)%2chhname.s_is%3afield(hhname.s_is)%2cclustereddate.dt_is%3afield(clustereddate.dt_is)%2csysmoddate.dt_is%3afield(sysmoddate.dt_is)%2cprbegindate.dt_is%3afield(prbegindate.dt_is)%2cprenddate.dt_is%3afield(prenddate.dt_is)%2cpayhigh.i_is%3afield(payhigh.i_is)%2cdegreerequiredint.i_is%3afield(degreerequiredint.i_is)%2cdisplayweight.i_is%3afield(displayweight.i_is)%2cmodifiedint.i_is%3afield(modifiedint.i_is)%2cpaylow.i_is%3afield(paylow.i_is)%2creqexpint.i_is%3afield(reqexpint.i_is)%2creservedint1.i_is%3afield(reservedint1.i_is)%2creservedint2.i_is%3afield(reservedint2.i_is)%2cyearsexperiencelow.i_is%3afield(yearsexperiencelow.i_is)%2cyearsexperiencehigh.i_is%3afield(yearsexperiencehigh.i_is)%2cscore&amp;sort=displayweight.i_is+desc,score+desc,modifiedint.i_is+desc,score+desc</ServerURL>
+  </SearchMetaData>
+</ResponseJobSearch>

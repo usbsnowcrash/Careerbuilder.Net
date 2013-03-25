@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using CBApi.Models.Facets;
+
 namespace CBApi.Models.Responses {
     [Serializable]
     public class ResponseJobSearch {
@@ -10,5 +12,6 @@ namespace CBApi.Models.Responses {
         public int FirstItemIndex { get; set; }
         public int LastItemIndex { get; set; }
         public List<JobSearchResult> Results { get; set; }
+        public List<Facet> Facets { get; set; }
     }
 }

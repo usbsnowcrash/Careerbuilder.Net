@@ -1,4 +1,6 @@
-﻿using CBApi.Models.Responses;
+﻿using System;
+using System.Collections.Generic;
+using CBApi.Models.Responses;
 using CBApi.Models.Service;
 
 namespace CBApi.Models
@@ -26,6 +28,16 @@ namespace CBApi.Models
         Descending
     }
 
+    public enum FacetField {
+        FacetCategory,
+        FacetCompany,
+        FacetCity,
+        FacetState,
+        FacetCityState,
+        FacetPay,
+        FacetNormalizedCompanyDID
+    }
+
     public interface IJobSearch
     {
         IJobSearch Ascending();
@@ -48,6 +60,8 @@ namespace CBApi.Models
         IJobSearch WherePayGreaterThan(int value);
         IJobSearch WherePayLessThan(int value);
         IJobSearch WhereSiteEntity(string value);
+        IJobSearch WhereFacets(params KeyValuePair<FacetField, string>[] facets);
+        IJobSearch ShowFacets();
         
         ResponseJobSearch Search();
     }
