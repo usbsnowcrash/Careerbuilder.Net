@@ -24,6 +24,7 @@ namespace CBApi.Framework.Requests {
         protected OrderByType _OrderBy = OrderByType.Relevance;
         protected OrderDirection _OrderDirection = OrderDirection.Descending;
         protected int _PerPage = 25;
+        protected int _PageNumber = 1;
         protected int _PostedWithin = 30;
         protected int _Radius = 30;
         protected string _Soccode = "";
@@ -69,6 +70,7 @@ namespace CBApi.Framework.Requests {
             AddPostedWithinToRequest();
             AddEmployeeTypesToRequest();
             AddPerPageToRequest();
+            AddPageNumberToRequest();
             AddSiteEntityToRequest();
             AddFacets();
         }
@@ -152,6 +154,10 @@ namespace CBApi.Framework.Requests {
 
         private void AddPerPageToRequest() {
             _request.AddParameter("PerPage", _PerPage);
+        }
+
+        private void AddPageNumberToRequest() {
+            _request.AddParameter("PageNumber", _PageNumber);
         }
 
         private void AddSiteEntityToRequest() {
@@ -250,7 +256,22 @@ namespace CBApi.Framework.Requests {
             return this;
         }
 
+        public IJobSearch SelectCount(int value) {
+            _PerPage = value;
+            return this;
+        }
+
+        public IJobSearch SelectPage(int value) {
+            _PageNumber = value;
+            return this;
+        }
+
         public IJobSearch Limit(int value) {
+            _PerPage = value;
+            return this;
+        }
+
+        public IJobSearch WherePerPage(int value) {
             _PerPage = value;
             return this;
         }

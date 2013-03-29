@@ -47,6 +47,8 @@ namespace CBApi.Models
         IJobSearch OrderBy(OrderByType value);
         IJobSearch Radius(int value);
         IJobSearch SelectTop(int value);
+        IJobSearch SelectCount(int value);
+        IJobSearch SelectPage(int value);
         IJobSearch WhereKeywords(string value);
         IJobSearch WhereCategories(params Category[] codes);
         IJobSearch WhereIndustry(params string[] industries);
@@ -59,6 +61,7 @@ namespace CBApi.Models
         IJobSearch WhereSOCCode(string value);
         IJobSearch WherePayGreaterThan(int value);
         IJobSearch WherePayLessThan(int value);
+        IJobSearch WherePerPage(int value);
         IJobSearch WhereSiteEntity(string value);
         IJobSearch WhereFacets(params KeyValuePair<FacetField, string>[] facets);
         IJobSearch ShowFacets();
