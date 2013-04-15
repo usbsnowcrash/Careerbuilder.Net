@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="CBApi\framework\ErrorParserTests.cs" />
     <Compile Include="CBApi\framework\requests\BlankAppStub.cs" />
+    <Compile Include="CBApi\framework\requests\CheckExistingUserRequestTest.cs" />
     <Compile Include="CBApi\framework\requests\TargetSiteTest.cs" />
     <Compile Include="CBApi\framework\requests\JobRecommendationsRequestTest.cs" />
     <Compile Include="CBApi\framework\requests\JobRecommendationsWithUserPreferencesRequestTest.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="CBApi\framework\requests\BlankApplicationTest.cs" />
     <Compile Include="CBApi\framework\requests\AuthTokenRequestTest.cs" />
     <Compile Include="CBApi\framework\stubrequests\CategoriesStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\CheckExistingUserRequestStub.cs" />
     <Compile Include="CBApi\framework\stubrequests\JobRecRequestStub.cs" />
     <Compile Include="CBApi\framework\stubrequests\JobRecWithUserPrefRequestStub.cs" />
     <Compile Include="CBApi\framework\stubrequests\SubmitApplicationRequestStub.cs" />

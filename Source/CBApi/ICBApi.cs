@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CBApi.Models;
+using CheckExisting = CBApi.Models.CheckExisting;
 using CBApi.Models.Responses;
 using CBApi.Framework.Events;
 
@@ -16,6 +17,7 @@ namespace CBApi
         int TimeoutMS { get; set; }
         string GetApplicationForm(string jobDid);
         AccessToken GetAccessToken(string clientId, string clientSecret, string code, string redirectUri);
+        CheckExisting.ResponseUserCheck CheckExistingUser(CheckExisting.Request checkExisting);
         Uri GetOAuthRedirectUri(string clientId, string redirectUri, string permissions);
         BlankApplication GetBlankApplication(string jobDid);
         ICategoryRequest GetCategories();
