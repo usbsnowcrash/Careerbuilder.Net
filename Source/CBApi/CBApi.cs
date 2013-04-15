@@ -214,7 +214,7 @@ namespace CBApi {
         }
 
         /// <summary>
-        /// Make a call to UserInfo service with endpoint /v2/checkexisting
+        /// Make a call to UserInfo service with endpoint /v2/user/checkexisting
         /// </summary>
         /// <param name="checkExisting">The email/password user info combo</param>
         /// <returns>The User's status in the system and External DID</returns>
