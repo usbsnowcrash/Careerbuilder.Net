@@ -26,7 +26,7 @@ namespace CBApi.Framework.Requests {
         protected int _PerPage = 25;
         protected int _PageNumber = 1;
         protected int _PostedWithin = 30;
-        protected int _Radius = 30;
+        protected int _Radius = 0;
         protected string _Soccode = "";
         protected bool _SpecificEducation = false;
         protected bool _ExcludeNationWideJobs = true;
