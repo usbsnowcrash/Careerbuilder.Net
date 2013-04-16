@@ -218,7 +218,7 @@ namespace CBApi {
         /// </summary>
         /// <param name="checkExisting">The email/password user info combo</param>
         /// <returns>The User's status in the system and External DID</returns>
-        public Models.CheckExisting.ResponseUserCheck CheckExistingUser(Models.CheckExisting.Request checkExisting) {
+        public ResponseUserCheck CheckExistingUser(UserCheck checkExisting) {
             checkExisting.DeveloperKey = _Settings.DevKey;
 
             var req = new CheckExistingUserRequest(_Settings);

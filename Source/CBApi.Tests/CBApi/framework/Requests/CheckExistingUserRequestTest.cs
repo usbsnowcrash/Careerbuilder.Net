@@ -1,6 +1,7 @@
 ﻿using CBApi;
 using CBApi.Framework.Requests;
-using CBApi.Models.CheckExisting;
+using CBApi.Models;
+using CBApi.Models.Responses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
@@ -16,7 +17,7 @@ namespace Tests.CBApi.framework.requests {
         public void GetUserCheck_PerformsCorrectRequest() {
             //Setup
             var request = new CheckExistingUserRequestStub("DevKey", "api.careerbuilder.com", "", "", 12345);
-            var dummyApp = new Request();
+            var dummyApp = new UserCheck();
 
             //Mock crap
             var response = new RestResponse<ResponseUserCheck> { Data = new ResponseUserCheck(), ResponseStatus = ResponseStatus.Completed };

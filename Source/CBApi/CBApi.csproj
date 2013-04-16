@@ -75,6 +75,7 @@
     <Compile Include="Models\RequestApplication.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\ResponseJobReport.cs" />
+    <Compile Include="Models\ResponseUserCheck.cs" />
     <Compile Include="Models\Resume.cs" />
     <Compile Include="Models\QueryInterfaces\IJobSearch.cs" />
     <Compile Include="Framework\Requests\CategoriesRequest.cs" />

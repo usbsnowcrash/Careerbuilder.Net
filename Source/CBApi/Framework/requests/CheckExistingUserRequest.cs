@@ -1,5 +1,6 @@
 ﻿using RestSharp;
-using CBApi.Models.CheckExisting;
+using CBApi.Models;
+using CBApi.Models.Responses;
 
 namespace CBApi.Framework.Requests {
     internal class CheckExistingUserRequest : PostRequest
@@ -13,7 +14,7 @@ namespace CBApi.Framework.Requests {
             get { return "/v2/user/checkexisting"; }
         }
 
-        public ResponseUserCheck GetUserCheck(Request checkExisting)
+        public ResponseUserCheck GetUserCheck(UserCheck checkExisting)
         {
             _request.AddBody(checkExisting);
             base.BeforeRequest();
