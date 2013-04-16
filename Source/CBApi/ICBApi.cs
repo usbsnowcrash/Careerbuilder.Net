@@ -16,6 +16,7 @@ namespace CBApi
         int TimeoutMS { get; set; }
         string GetApplicationForm(string jobDid);
         AccessToken GetAccessToken(string clientId, string clientSecret, string code, string redirectUri);
+        ResponseUserCheck CheckExistingUser(UserCheck checkExisting);
         Uri GetOAuthRedirectUri(string clientId, string redirectUri, string permissions);
         BlankApplication GetBlankApplication(string jobDid);
         ICategoryRequest GetCategories();

@@ -214,6 +214,20 @@ namespace CBApi {
         }
 
         /// <summary>
+        /// Make a call to UserInfo service with endpoint /v2/user/checkexisting
+        /// </summary>
+        /// <param name="checkExisting">The email/password user info combo</param>
+        /// <returns>The User's status in the system and External DID</returns>
+        public ResponseUserCheck CheckExistingUser(UserCheck checkExisting) {
+            checkExisting.DeveloperKey = _Settings.DevKey;
+
+            var req = new CheckExistingUserRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.GetUserCheck(checkExisting);
+        }
+
+        /// <summary>
         /// Make a call to /v1/recommendations/forjob
         /// </summary>
         /// <param name="jobDID">The unique ID of the job</param>
