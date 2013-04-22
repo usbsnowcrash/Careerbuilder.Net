@@ -5,6 +5,7 @@ using CBApi.Models.Facets;
 namespace CBApi.Models.Responses {
     [Serializable]
     public class ResponseJobSearch {
+
         public DateTime TimeResponseSent { get; set; }
         public float TimeElapsed { get; set; }
         public int TotalPages { get; set; }
@@ -13,5 +14,7 @@ namespace CBApi.Models.Responses {
         public int LastItemIndex { get; set; }
         public List<JobSearchResult> Results { get; set; }
         public List<Facet> Facets { get; set; }
+        public JobSearchMetaData SearchMetaData { get; set; }
+
     }
 }
