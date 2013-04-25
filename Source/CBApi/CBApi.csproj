@@ -99,6 +99,7 @@
     <Compile Include="Models\Money.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\ResponseJobSearch.cs" />
+    <Compile Include="Models\SearchLocation.cs" />
     <Compile Include="Models\Service\CareerBuilder.Com.cs" />
     <Compile Include="Models\Service\CountryCodes.cs" />
     <Compile Include="Models\Service\TargetSite.cs" />
