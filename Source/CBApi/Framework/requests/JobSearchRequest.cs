@@ -34,6 +34,8 @@ namespace CBApi.Framework.Requests {
         protected List<string> _ExcludedCompanies = new List<string>();
         protected List<string> _ExcludedJobTitles = new List<string>();
         protected List<string> _ExcludedKeywords = new List<string>();
+        protected string _ApplyRequirements = "";
+        protected string _ExcludeApplyRequirements = "";
 
         public override string BaseUrl {
             get { return "/v1/jobsearch"; }
@@ -43,6 +45,11 @@ namespace CBApi.Framework.Requests {
             : base(settings) {
         }
 
+        public IJobSearch ApplyRequirements(string value) {
+            _ApplyRequirements = value;
+            return this;
+        }
+
         public IJobSearch Ascending() {
             _OrderDirection = OrderDirection.Ascending;
             return this;
@@ -50,6 +57,11 @@ namespace CBApi.Framework.Requests {
 
         public IJobSearch Descending() {
             _OrderDirection = OrderDirection.Descending;
+            return this;
+        }
+
+        public IJobSearch ExcludeApplyRequirements(string value) {
+            _ExcludeApplyRequirements = value;
             return this;
         }
 
@@ -305,6 +317,18 @@ namespace CBApi.Framework.Requests {
             AddSearchViewToRequest();
 
             AddFacets();
+            AddApplyRequirementsToRequest();
+            AddExcludeApplyRequirementsToRequest();
+        }
+
+        private void AddApplyRequirementsToRequest() {
+            if (!string.IsNullOrEmpty(_ApplyRequirements))
+                _request.AddParameter("ApplyRequirements", _ApplyRequirements);
+        }
+
+        private void AddExcludeApplyRequirementsToRequest() {
+            if (!string.IsNullOrEmpty(_ExcludeApplyRequirements))
+                _request.AddParameter("ExcludeApplyRequirements", _ExcludeApplyRequirements);
         }
 
         private void AddCategoriesToRequest() {

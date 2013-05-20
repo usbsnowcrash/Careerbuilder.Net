@@ -36,9 +36,13 @@ namespace CBApi.Models {
 
     public interface IJobSearch {
 
+        IJobSearch ApplyRequirements(string value);
+
         IJobSearch Ascending();
 
         IJobSearch Descending();
+
+        IJobSearch ExcludeApplyRequirements(string value);
 
         IJobSearch ExcludeJobsWithoutSalary();
 
