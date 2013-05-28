@@ -298,6 +298,8 @@ namespace CBApi.Framework.Requests {
             AddCompanyNameToRequest();
             AddLocationToRequest();
             AddRadiusToRequest();
+            AddPayLowToRequest();
+            AddPayHighToRequest();
             AddCountryCodeToRequest();
             AddCategoriesToRequest();
             AddIndustriesToRequest();
@@ -337,6 +339,16 @@ namespace CBApi.Framework.Requests {
                 string cats = string.Join(",", _CategoryCodes);
                 _request.AddParameter("Category", cats);
             }
+        }
+
+        private void AddPayHighToRequest() {
+            if (_MaxPay != null && _MaxPay > 0)
+                _request.AddParameter("PayHigh", _MaxPay);
+        }
+
+        private void AddPayLowToRequest() {
+            if (_MinPay != null && _MinPay > 0)
+                _request.AddParameter("PayLow", _MinPay);
         }
 
         private void AddCompanyDIDsToRequest() {
