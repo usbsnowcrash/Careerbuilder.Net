@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System.Text.RegularExpressions;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,20 @@ namespace CBApi.Framework {
         }
 
         private static void ParseResponseForErrorsNode(IRestResponse response) {
-            if (!string.IsNullOrEmpty(response.ContentType) && response.ContentType.ToLower() == "application/json") {
+
+            if (IsJson(response))
                 ParseJSONForErrorsNode(response);
-            } else {
+            else
                 ParseXmlForErrorsNode(response);
-            }
+        }
+
+        private static bool IsJson(IRestResponse response)
+        {
+            if (string.IsNullOrEmpty(response.ContentType))
+                return false;
+
+            var regex = new Regex("^application/json.*");
+            return regex.IsMatch(response.ContentType.ToLower());
         }
 
         private static void ParseXmlForErrorsNode(IRestResponse response) {
