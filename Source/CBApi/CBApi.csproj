@@ -66,6 +66,7 @@
     <Compile Include="Framework\Requests\OAuthRedirectBuilder.cs" />
     <Compile Include="Framework\Requests\JobReportRequest.cs" />
     <Compile Include="Framework\Requests\PostRequest.cs" />
+    <Compile Include="Framework\Requests\SavedSearchCreateRequest.cs" />
     <Compile Include="Framework\Requests\SubmitApplicationRequest.cs" />
     <Compile Include="ICBApi.cs" />
     <Compile Include="IRequestEventData.cs" />
@@ -106,6 +107,8 @@
     <Compile Include="Models\Money.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\ResponseJobSearch.cs" />
+    <Compile Include="Models\SavedSearchCreate.cs" />
+    <Compile Include="Models\SavedSearchCreateResponse.cs" />
     <Compile Include="Models\SearchLocation.cs" />
     <Compile Include="Models\Service\CareerBuilder.Com.cs" />
     <Compile Include="Models\Service\CountryCodes.cs" />
@@ -137,5 +140,4 @@
   <Target Name="AfterBuild">
     <MSBuild Condition="'$(Configuration)' == 'Release'" Projects="..\.nuget\NuGet.msbuild" />
   </Target>
-
 </Project>

@@ -28,5 +28,7 @@ namespace CBApi
         ResponseJobReport JobReport(string jobDid);
         ResponseApplication SubmitApplication(Application app);
         ResponseApplication SubmitApplication(RequestApplication app);
+        SavedSearchCreateResponse CreateSavedSearch(SavedSearchCreate app);
+        
     }
 }
