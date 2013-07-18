@@ -180,6 +180,19 @@ namespace CBApi {
         }
 
         /// <summary>
+        /// create a saved search
+        /// </summary>
+        /// <param name="app">the saved search that is wanting to be saved</param>
+        /// <returns></returns>
+        public SavedSearchCreateResponse CreateSavedSearch(SavedSearchCreate app)
+        {
+            var req = new SavedSearchCreateRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
         /// Make a call to /v1/categories
         /// </summary>
         /// <returns>A Category Request to query against</returns>
