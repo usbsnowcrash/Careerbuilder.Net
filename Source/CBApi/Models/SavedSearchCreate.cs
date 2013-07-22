@@ -19,7 +19,7 @@ namespace CBApi.Models
     }
 
     [Serializable]
-    [SerializeAs(Name="SavedSearchParameters")]
+    [SerializeAs(Name="SearchParameters")]
     public class SearchParameters
     {
         public string BooleanOperator { get; set; }
