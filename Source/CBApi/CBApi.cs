@@ -180,6 +180,58 @@ namespace CBApi {
         }
 
         /// <summary>
+
+        /// create a saved search
+        /// </summary>
+        /// <param name="app">the saved search that is wanting to be saved</param>
+        /// <returns></returns>
+        public SavedSearchCreateResponse CreateSavedSearch(SavedSearchCreate app)
+        {
+            var req = new SavedSearchCreateRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
+        /// Retrieve a single saved search
+        /// </summary>
+        /// <param name="app">Info to lead to the saved search</param>
+        /// <returns></returns>
+        public SavedSearchRetrieveResponseModel RetrieveSavedSearch(SavedSearchRetrieveRequestModel app)
+        {
+            var req = new SavedSearchRetrieveRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
+        /// Lists all saved searches from a single user
+        /// </summary>
+        /// <param name="app">info to lead to the users saved searches</param>
+        /// <returns></returns>
+        public SavedSearchListResponseModel ListSavedSearches(SavedSearchListRequestModel app)
+        {
+            var req = new SavedSearchListRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
+        /// Updates a SavedSearch
+        /// </summary>
+        /// <param name="app">The data for the savedsearch</param>
+        /// <returns></returns>
+        public SavedSearchUpdateResponseModel UpdateSavedSearche(SavedSearchUpdateRequestModel app)
+        {
+            var req = new SavedSearchUpdateRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
         /// Delete a saved search with /v1/savedsearch/delete.xml
         /// </summary>
         /// <param name="search">The search being deleted</param>
@@ -189,6 +241,7 @@ namespace CBApi {
             WireBeforeRequestEvents(req);
             WireAfterRequestEvents(req);
             return req.Submit(search);
+
         }
 
         /// <summary>

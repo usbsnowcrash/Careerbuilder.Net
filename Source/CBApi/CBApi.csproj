@@ -66,7 +66,14 @@
     <Compile Include="Framework\Requests\OAuthRedirectBuilder.cs" />
     <Compile Include="Framework\Requests\JobReportRequest.cs" />
     <Compile Include="Framework\Requests\PostRequest.cs" />
+
+    <Compile Include="Framework\Requests\SavedSearchCreateRequest.cs" />
+    <Compile Include="Framework\Requests\SavedSearchListRequest.cs" />
+    <Compile Include="Framework\Requests\SavedSearchRetrieveRequest.cs" />
+    <Compile Include="Framework\Requests\SavedSearchUpdateRequest.cs" />
+
     <Compile Include="Framework\Requests\SavedSearchDeleteRequest.cs" />
+
     <Compile Include="Framework\Requests\SubmitApplicationRequest.cs" />
     <Compile Include="ICBApi.cs" />
     <Compile Include="IRequestEventData.cs" />
@@ -107,8 +114,19 @@
     <Compile Include="Models\Money.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\ResponseJobSearch.cs" />
+
+    <Compile Include="Models\SavedSearchCreate.cs" />
+    <Compile Include="Models\SavedSearchCreateResponse.cs" />
+    <Compile Include="Models\SavedSearchListRequestModel.cs" />
+    <Compile Include="Models\SavedSearchListResponseModel.cs" />
+    <Compile Include="Models\SavedSearchRetrieveRequestModel.cs" />
+    <Compile Include="Models\SavedSearchRetrieveResponseModel.cs" />
+    <Compile Include="Models\SavedSearchUpdateRequestModel.cs" />
+    <Compile Include="Models\SavedSearchUpdateResponseModel.cs" />
+
     <Compile Include="Models\RequestSavedSearchDelete.cs" />
     <Compile Include="Models\SavedSearchDeleteResponse.cs" />
+
     <Compile Include="Models\SearchLocation.cs" />
     <Compile Include="Models\Service\CareerBuilder.Com.cs" />
     <Compile Include="Models\Service\CountryCodes.cs" />

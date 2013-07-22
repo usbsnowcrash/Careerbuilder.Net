@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SavedJobSearch>
+  <Errors />
+  <SavedSearch>
+    <SearchName>lotsloc</SearchName>
+    <HostSite>US</HostSite>
+    <SiteID></SiteID>
+    <Cobrand></Cobrand>
+    <IsDailyEmail>none</IsDailyEmail>
+    <EmailDeliveryDay>NONE</EmailDeliveryDay>
+    <SavedSearchParameters>
+      <BooleanOperator>AND</BooleanOperator>
+      <Category />
+      <EducationCode>DRNS</EducationCode>
+      <EmpType />
+      <ExcludeCompanyNames />
+      <ExcludeJobTitles />
+      <ExcludeKeywords />
+      <ExcludeNational>false</ExcludeNational>
+      <IndustryCodes />
+      <JobTitle />
+      <Keywords />
+      <Location>Chicago, Il, Atlanta, Ga, New York, Ny</Location>
+      <OrderBy>Pay</OrderBy>
+      <OrderDirection>ascending</OrderDirection>
+      <PayHigh>70</PayHigh>
+      <PayInfoOnly>false</PayInfoOnly>
+      <PayLow>40</PayLow>
+      <PostedWithin>30</PostedWithin>
+      <Radius>30</Radius>
+      <SpecificEducation>false</SpecificEducation>
+      <JCPositionLevel />
+      <JCLocation />
+      <JCAdvertiserflags />
+      <JCJobNature />
+      <JobCategory />
+      <Company />
+      <City />
+      <State />
+    </SavedSearchParameters>
+    <JobSearchUrl>https://api.careerbuilder.com/v1/jobsearch?BooleanOperator=AND&amp;EducationCode=DRNS&amp;ExcludeNational=False&amp;Location=Chicago%2c+Il%2c+Atlanta%2c+Ga%2c+New+York%2c+Ny&amp;OrderBy=Pay&amp;OrderDirection=ascending&amp;PayHigh=70&amp;PayInfoOnly=False&amp;PayLow=40&amp;PostedWithin=30&amp;Radius=30&amp;SpecificEducation=False&amp;DeveloperKey=WDJ16BN6CQB69FP18Y8F&amp;Hostsite=US</JobSearchUrl>
+  </SavedSearch>
+</SavedJobSearch>
