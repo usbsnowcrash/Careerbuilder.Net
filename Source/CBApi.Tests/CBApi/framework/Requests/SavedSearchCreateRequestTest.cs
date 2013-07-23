@@ -48,17 +48,17 @@ namespace Tests.CBApi.framework.requests
             dummyApp.IsDailyEmail = "none";
             dummyApp.ExternalUserID = "Nicholas.Busby.Test@CareerBuilder.com";
             dummyApp.DeveloperKey = "WDJ16BN6CQB69FP18Y8F";
-            dummyApp.SavedSearchParameters = new SearchParameters();
-            dummyApp.SavedSearchParameters.Radius = 30;
-            dummyApp.SavedSearchParameters.PayHigh = 70;
-            dummyApp.SavedSearchParameters.PayLow = 40;
-            dummyApp.SavedSearchParameters.PostedWithin = 30;
-            dummyApp.SavedSearchParameters.PayInfoOnly = false;
-            dummyApp.SavedSearchParameters.Location = "Chicago, Il, Atlanta, Ga, New York, Ny";
-            dummyApp.SavedSearchParameters.OrderDirection = "ascending";
-            dummyApp.SavedSearchParameters.SpecificEducation = false;
-            dummyApp.SavedSearchParameters.ExcludeNational = false;
-            dummyApp.SavedSearchParameters.OrderBy = "Pay";
+            dummyApp.SearchParameters = new SearchParameters();
+            dummyApp.SearchParameters.Radius = 30;
+            dummyApp.SearchParameters.PayHigh = 70;
+            dummyApp.SearchParameters.PayLow = 40;
+            dummyApp.SearchParameters.PostedWithin = 30;
+            dummyApp.SearchParameters.PayInfoOnly = false;
+            dummyApp.SearchParameters.Location = "Chicago, Il, Atlanta, Ga, New York, Ny";
+            dummyApp.SearchParameters.OrderDirection = "ascending";
+            dummyApp.SearchParameters.SpecificEducation = false;
+            dummyApp.SearchParameters.ExcludeNational = false;
+            dummyApp.SearchParameters.OrderBy = "Pay";
             return dummyApp;
         }
     }
