@@ -26,6 +26,7 @@ namespace CBApi.Framework.Requests
         {
             _request.AddBody(search);
             base.BeforeRequest();
+            search.DeveloperKey = DeveloperKey;
             IRestResponse<SavedSearchListResponseModel> response = _client.Execute<SavedSearchListResponseModel>(_request);
             CheckForErrors(response);
             return response.Data;
