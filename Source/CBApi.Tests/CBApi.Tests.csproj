@@ -134,8 +134,12 @@
     <Content Include="testdata\ResponseJobSearchWithFacets.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="testdata\SavedSearchListData.xml" />
-    <Content Include="testdata\SaveSearchCreateData.xml" />
+    <Content Include="testdata\SavedSearchListData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="testdata\SaveSearchCreateData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

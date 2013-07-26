@@ -6,8 +6,7 @@ using System.Text;
 
 namespace CBApi.Models
 {
-    [Serializable]
-    [SerializeAs(Name = "Request")]
+
     public class SavedSearchRetrieveRequestModel
     {
         public string DeveloperKey { get; set; }

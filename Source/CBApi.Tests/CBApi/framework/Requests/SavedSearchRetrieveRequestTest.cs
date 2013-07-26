@@ -19,7 +19,10 @@ namespace Tests.CBApi.framework.requests
             //Mock
             var response = new RestResponse<SavedSearchRetrieveResponseModel> { Data = new SavedSearchRetrieveResponseModel(), ResponseStatus = ResponseStatus.Completed };
             var restReq = new Mock<IRestRequest>();
-            restReq.Setup(x => x.AddBody(dummyApp));
+
+            restReq.Setup(x => x.AddParameter("DeveloperKey", dummyApp.DeveloperKey));
+            restReq.Setup(x => x.AddParameter("ExternalUserID", dummyApp.ExternalUserID));
+            restReq.Setup(x => x.AddParameter("ExternalID", dummyApp.ExternalID));
 
 
 

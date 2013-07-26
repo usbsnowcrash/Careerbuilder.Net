@@ -24,7 +24,9 @@ namespace CBApi.Framework.Requests
 
         public SavedSearchRetrieveResponseModel Submit(SavedSearchRetrieveRequestModel search)
         {
-            _request.AddBody(search);
+            _request.AddParameter("DeveloperKey", search.DeveloperKey);
+            _request.AddParameter("ExternalUserID", search.ExternalUserID);
+            _request.AddParameter("ExternalID", search.ExternalID);
             base.BeforeRequest();
             search.DeveloperKey = DeveloperKey;
             IRestResponse<SavedSearchRetrieveResponseModel> response = _client.Execute<SavedSearchRetrieveResponseModel>(_request);
