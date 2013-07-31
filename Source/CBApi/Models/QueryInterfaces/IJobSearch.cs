@@ -16,7 +16,8 @@ namespace CBApi.Models {
         FacetState,
         FacetCityState,
         FacetPay,
-        FacetNormalizedCompanyDID
+        FacetNormalizedCompanyDID,
+        FacetCountry
     }
 
     public enum OrderByType {
