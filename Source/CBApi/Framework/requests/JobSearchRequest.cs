@@ -12,7 +12,7 @@ namespace CBApi.Framework.Requests {
         protected BooleanOperator _BooleanOperator = BooleanOperator.AND;
         protected OrderByType _OrderBy = OrderByType.Relevance;
         protected OrderDirection _OrderDirection = OrderDirection.Descending;
-        protected bool _ExcludeJobsWithoutSalary, _ExcludeNationwide, _ExcludeNontraditional, _SpecificEducation, _ShowFacets;
+        protected bool _ExcludeJobsWithoutSalary, _ExcludeNationwide, _ExcludeNontraditional, _SpecificEducation, _ShowFacets, _EnableCompanyJobTitleCollapse;
         protected string _CompanyName = "";
         protected string _CountryCode = "";
         protected string _HostSite = "US";
@@ -60,6 +60,11 @@ namespace CBApi.Framework.Requests {
 
         public IJobSearch Descending() {
             _OrderDirection = OrderDirection.Descending;
+            return this;
+        }
+
+        public IJobSearch EnableCompanyJobTitleCollapse() {
+            _EnableCompanyJobTitleCollapse = true;
             return this;
         }
 
@@ -349,6 +354,7 @@ namespace CBApi.Framework.Requests {
             AddFacets();
             AddApplyRequirementsToRequest();
             AddExcludeApplyRequirementsToRequest();
+            AddEnableCompanyJobTitleCollapse();
         }
 
         private void AddApplyRequirementsToRequest() {
@@ -411,6 +417,11 @@ namespace CBApi.Framework.Requests {
                 string industries = string.Join(",", _EmployeeTypes);
                 _request.AddParameter("EmpType", industries);
             }
+        }
+
+        private void AddEnableCompanyJobTitleCollapse() {
+            if (_EnableCompanyJobTitleCollapse)
+                _request.AddParameter("EnableCompanyJobTitleCollapse", "true");
         }
 
         private void AddExcludedCompaniesToRequest() {
