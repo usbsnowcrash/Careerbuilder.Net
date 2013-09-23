@@ -45,8 +45,6 @@ namespace CBApi.Models {
 
         IJobSearch EnableCompanyJobTitleCollapse();
 
-        IJobSearch EnableAdvancedGroupingMode();
-
         IJobSearch ExcludeApplyRequirements(string value);
 
         IJobSearch ExcludeJobsWithoutSalary();
