@@ -423,7 +423,7 @@ namespace CBApi.Framework.Requests {
             if (_EnableCompanyJobTitleCollapse)
                 _request.AddParameter("EnableCompanyJobTitleCollapse", "true");
         }
-
+        
         private void AddExcludedCompaniesToRequest() {
             if (_ExcludedCompanies.Count > 0) {
                 string companies = string.Join(",", _ExcludedCompanies);
