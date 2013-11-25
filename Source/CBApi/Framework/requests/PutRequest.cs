@@ -48,6 +48,7 @@ namespace CBApi.Framework.Requests
         protected virtual void BeforeRequest()
         {
             _client.BaseUrl = PutRequestURL();
+            _request.AddParameter("DeveloperKey", _Settings.DevKey);
             _request.RequestFormat = DataFormat.Xml;
             _request.Timeout = _Settings.TimeoutMS;
             if (!string.IsNullOrEmpty(_Settings.TargetSite.Host))
