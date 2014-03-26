@@ -71,9 +71,13 @@ namespace CBApi.Models {
 
         IJobSearch ShowFacets();
 
+        IJobSearch WhereAdvancedGroupingMode(bool value);
+
         IJobSearch WhereCategories(params Category[] codes);
 
         IJobSearch WhereCompanyDIDs(params string[] companies);
+
+        IJobSearch WhereCompanyJobTitleCollapse(bool value);
 
         IJobSearch WhereCompanyName(string value);
 
@@ -88,6 +92,8 @@ namespace CBApi.Models {
         IJobSearch WhereEmployeeTypes(params string[] employmentTypes);
 
         IJobSearch WhereFacets(params KeyValuePair<FacetField, string>[] facets);
+
+        IJobSearch WhereGroupingValue(string value);
 
         IJobSearch WhereHostSite(HostSite value);
 

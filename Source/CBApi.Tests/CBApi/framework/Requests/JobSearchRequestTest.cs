@@ -161,5 +161,30 @@ namespace Tests.CBApi.framework.requests {
             Assert.IsNull(param, "ExcludeKeywords should not exist.");
         }
 
+        [TestMethod]
+        public void WhereGroupValue_SetsCorrectParameters() {
+            var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
+            jobSearch.WhereGroupingValue("grouping value");
+            jobSearch.AddParametersToRequest();
+            var param_grouping_value = jobSearch.Request.Parameters.Find(qs => qs.Name == "GroupingValue").Value;
+            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "AdvancedGroupingMode").Value;
+            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "EnableCompanyJobTitleCollapse").Value;
+            Assert.AreEqual("grouping value", param_grouping_value);
+            Assert.AreEqual(false, param_advanced_grouping);
+            Assert.AreEqual(false, param_enable_company_job_title_collapse);
+        }
+
+        [TestMethod]
+        public void WhereGroupValue_SetsCorrectParameters_WhenNotSet() {
+            var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
+            jobSearch.AddParametersToRequest();
+            var param_grouping_value = jobSearch.Request.Parameters.Find(qs => qs.Name == "GroupingValue");
+            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "AdvancedGroupingMode");
+            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "EnableCompanyJobTitleCollapse");
+            Assert.IsNull(param_grouping_value);
+            Assert.IsNull(param_advanced_grouping);
+            Assert.IsNull(param_enable_company_job_title_collapse);
+        }
+
     }
 }

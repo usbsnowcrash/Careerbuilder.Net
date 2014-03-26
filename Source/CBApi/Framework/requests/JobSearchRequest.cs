@@ -12,7 +12,7 @@ namespace CBApi.Framework.Requests {
         protected BooleanOperator _BooleanOperator = BooleanOperator.AND;
         protected OrderByType _OrderBy = OrderByType.Relevance;
         protected OrderDirection _OrderDirection = OrderDirection.Descending;
-        protected bool _ExcludeJobsWithoutSalary, _ExcludeNationwide, _ExcludeNontraditional, _SpecificEducation, _ShowFacets, _EnableCompanyJobTitleCollapse;
+        protected bool _ExcludeJobsWithoutSalary, _ExcludeNationwide, _ExcludeNontraditional, _SpecificEducation, _ShowFacets;
         protected string _CompanyName = "";
         protected string _CountryCode = "";
         protected string _HostSite = "US";
@@ -29,6 +29,9 @@ namespace CBApi.Framework.Requests {
         protected int _PerPage = 25;
         protected int _PostedWithin = 30;
         protected int _Radius = 0;
+        protected bool _AdvancedGroupingMode = false;
+        protected bool _EnableCompanyJobTitleCollapse = false;
+        protected string _GroupingValue = "";
         protected Dictionary<FacetField, string> _Facets = new Dictionary<FacetField, string>();
         protected List<string> _CategoryCodes = new List<string>();
         protected List<string> _CompanyDids = new List<string>();
@@ -65,6 +68,21 @@ namespace CBApi.Framework.Requests {
 
         public IJobSearch EnableCompanyJobTitleCollapse() {
             _EnableCompanyJobTitleCollapse = true;
+            return this;
+        }
+
+        public IJobSearch WhereGroupingValue(string value) {
+            _GroupingValue = value;
+            return this;
+        }
+
+        public IJobSearch WhereAdvancedGroupingMode(bool value) {
+            _AdvancedGroupingMode = value;
+            return this;
+        }
+
+        public IJobSearch WhereCompanyJobTitleCollapse(bool value) {
+            _EnableCompanyJobTitleCollapse = value;
             return this;
         }
 
@@ -219,7 +237,7 @@ namespace CBApi.Framework.Requests {
             _CountryCode = value.ToString();
             return this;
         }
-            
+
         public IJobSearch WhereHostSite(string myHostSite) {
             if (!string.IsNullOrWhiteSpace(myHostSite)) {
                 _HostSite = myHostSite;
@@ -355,6 +373,8 @@ namespace CBApi.Framework.Requests {
             AddApplyRequirementsToRequest();
             AddExcludeApplyRequirementsToRequest();
             AddEnableCompanyJobTitleCollapse();
+            AddGroupingValue();
+
         }
 
         private void AddApplyRequirementsToRequest() {
@@ -540,6 +560,23 @@ namespace CBApi.Framework.Requests {
             if (!string.IsNullOrEmpty(_Soccode)) {
                 _request.AddParameter("SOCCode", _Soccode);
             }
+        }
+
+        private void AddGroupingValue() {
+            if (!string.IsNullOrEmpty(_GroupingValue)) {
+                _request.AddParameter("GroupingValue", _GroupingValue);
+                //hack until we convert group search correctly
+                AddAdvancedGroupingMode();
+                AddJobTitleCompanyCollapse();
+            }
+        }
+
+        private void AddAdvancedGroupingMode() {
+            _request.AddParameter("AdvancedGroupingMode", _AdvancedGroupingMode);
+        }
+
+        private void AddJobTitleCompanyCollapse() {
+            _request.AddParameter("EnableCompanyJobTitleCollapse", _EnableCompanyJobTitleCollapse);
         }
 
     }
