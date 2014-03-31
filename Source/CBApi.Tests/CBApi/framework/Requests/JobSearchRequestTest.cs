@@ -179,11 +179,28 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.AddParametersToRequest();
             var param_grouping_value = jobSearch.Request.Parameters.Find(qs => qs.Name == "GroupingValue");
-            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "AdvancedGroupingMode");
-            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "EnableCompanyJobTitleCollapse");
+            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "AdvancedGroupingMode").Value;
+            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "EnableCompanyJobTitleCollapse").Value;
             Assert.IsNull(param_grouping_value);
-            Assert.IsNull(param_advanced_grouping);
-            Assert.IsNull(param_enable_company_job_title_collapse);
+            Assert.AreEqual(false,param_advanced_grouping);
+            Assert.AreEqual(false,param_enable_company_job_title_collapse);
+        }
+
+        [TestMethod]
+        public void SetRecordsPerGroup() {
+            var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
+            jobSearch.SetRecordsPerGroup(2); 
+            jobSearch.AddParametersToRequest();
+            var param_records_per_group = jobSearch.Request.Parameters.Find(qs => qs.Name == "RecordsPerGroup").Value;
+            Assert.AreEqual(2,param_records_per_group );
+        }
+
+        [TestMethod]
+        public void SetRecordsPerGroup_NotSet() {
+            var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
+            jobSearch.AddParametersToRequest();
+            var param_records_per_group = jobSearch.Request.Parameters.Find(qs => qs.Name == "RecordsPerGroup");
+            Assert.IsNull(param_records_per_group);
         }
 
     }

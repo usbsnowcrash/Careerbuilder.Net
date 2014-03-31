@@ -29,6 +29,7 @@ namespace CBApi.Framework.Requests {
         protected int _PerPage = 25;
         protected int _PostedWithin = 30;
         protected int _Radius = 0;
+        protected int _RecordsPerGroup = -1;
         protected bool _AdvancedGroupingMode = false;
         protected bool _EnableCompanyJobTitleCollapse = false;
         protected string _GroupingValue = "";
@@ -63,11 +64,6 @@ namespace CBApi.Framework.Requests {
 
         public IJobSearch Descending() {
             _OrderDirection = OrderDirection.Descending;
-            return this;
-        }
-
-        public IJobSearch EnableCompanyJobTitleCollapse() {
-            _EnableCompanyJobTitleCollapse = true;
             return this;
         }
 
@@ -153,6 +149,11 @@ namespace CBApi.Framework.Requests {
         public IJobSearch ShowFacets() {
             _ShowFacets = true;
             return this;
+        }
+
+        public IJobSearch SetRecordsPerGroup(int value) {
+            _RecordsPerGroup = value;
+            return this; 
         }
 
         public IJobSearch WhereCategories(params Category[] codes) {
@@ -372,8 +373,11 @@ namespace CBApi.Framework.Requests {
             AddFacets();
             AddApplyRequirementsToRequest();
             AddExcludeApplyRequirementsToRequest();
-            AddEnableCompanyJobTitleCollapse();
-            AddGroupingValue();
+
+            AddGroupingValueToRequest();
+            AddAdvancedGroupingModeToRequest();
+            AddCompanyJobTitleCollapseToRequest();
+            AddRecordsPerGroupToRequest(); 
 
         }
 
@@ -437,11 +441,6 @@ namespace CBApi.Framework.Requests {
                 string industries = string.Join(",", _EmployeeTypes);
                 _request.AddParameter("EmpType", industries);
             }
-        }
-
-        private void AddEnableCompanyJobTitleCollapse() {
-            if (_EnableCompanyJobTitleCollapse)
-                _request.AddParameter("EnableCompanyJobTitleCollapse", "true");
         }
 
         private void AddExcludedCompaniesToRequest() {
@@ -562,21 +561,24 @@ namespace CBApi.Framework.Requests {
             }
         }
 
-        private void AddGroupingValue() {
+        private void AddGroupingValueToRequest() {
             if (!string.IsNullOrEmpty(_GroupingValue)) {
                 _request.AddParameter("GroupingValue", _GroupingValue);
-                //hack until we convert group search correctly
-                AddAdvancedGroupingMode();
-                AddJobTitleCompanyCollapse();
             }
         }
 
-        private void AddAdvancedGroupingMode() {
+        private void AddAdvancedGroupingModeToRequest() {
             _request.AddParameter("AdvancedGroupingMode", _AdvancedGroupingMode);
         }
 
-        private void AddJobTitleCompanyCollapse() {
+        private void AddCompanyJobTitleCollapseToRequest() {
             _request.AddParameter("EnableCompanyJobTitleCollapse", _EnableCompanyJobTitleCollapse);
+        }
+
+        private void AddRecordsPerGroupToRequest() {
+            if (_RecordsPerGroup > -1) {
+                _request.AddParameter("RecordsPerGroup", _RecordsPerGroup);
+            }
         }
 
     }

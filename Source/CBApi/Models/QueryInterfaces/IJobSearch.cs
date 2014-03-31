@@ -43,8 +43,6 @@ namespace CBApi.Models {
 
         IJobSearch Descending();
 
-        IJobSearch EnableCompanyJobTitleCollapse();
-
         IJobSearch ExcludeApplyRequirements(string value);
 
         IJobSearch ExcludeJobsWithoutSalary();
@@ -68,6 +66,8 @@ namespace CBApi.Models {
         IJobSearch SelectPage(int value);
 
         IJobSearch SelectTop(int value);
+
+        IJobSearch SetRecordsPerGroup(int value); 
 
         IJobSearch ShowFacets();
 
