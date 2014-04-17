@@ -316,7 +316,7 @@ namespace CBApi {
         /// <param name="externalId">The ID of the user that you wish to get recs for</param>
         /// <returns></returns>
         public List<RecommendJobResult> GetRecommendationsForUser(string externalId) {
-            var req = new UserRecommendationsRequest(externalId, _Settings);
+            var req = new UserRecommendationsRequest(new ExternalID(externalId), _Settings);
             WireBeforeRequestEvents(req);
             WireAfterRequestEvents(req);
             return req.GetRecommendations();

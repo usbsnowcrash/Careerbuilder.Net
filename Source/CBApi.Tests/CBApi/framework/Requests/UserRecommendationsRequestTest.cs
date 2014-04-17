@@ -5,12 +5,25 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using Tests.CBApi.models.requests;
+using CBApi.Framework.Requests;
 
 namespace Tests.CBApi.framework.requests
 {
     [TestClass]
     public class UserRecommendationsRequestTest
     {
+
+        [TestMethod]
+        public void Verify_QSVars() {
+            List<QsParam> qsList = new List<QsParam>();
+            qsList.Add(new GenericParam("name", "value"));
+            qsList.Add(new GenericParam("name2", "value2"));
+            var request = new UserReqStub(qsList , "DevKey", "api.careerbuilder.com", "", "");
+            //add parameters and verify that both were added.
+            request.addQsParams();
+            Assert.IsTrue(2 == request.Request.Parameters.Count);
+            
+        }
         [TestMethod]
         public void Constructor_SetsExternalID()
         {
@@ -23,7 +36,7 @@ namespace Tests.CBApi.framework.requests
         {
             try
             {
-                var request = new UserReqStub(null, "DevKey", "api.careerbuilder.com", "", "");
+                var request = new UserReqStub((string)null, "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             }
             catch (ArgumentNullException ex)

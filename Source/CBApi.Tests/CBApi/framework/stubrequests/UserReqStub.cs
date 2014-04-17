@@ -1,4 +1,5 @@
-﻿using CBApi;
+﻿using System.Collections.Generic;
+using CBApi;
 using CBApi.Framework.Requests;
 using RestSharp;
 using Tests.CBApi.models.service;
@@ -6,11 +7,17 @@ using Tests.CBApi.models.service;
 namespace Tests.CBApi.models.requests {
     internal class UserReqStub : UserRecommendationsRequest {
         public UserReqStub(string externalID, string key, string domain, string cobrand, string siteid)
-            : base(externalID, new APISettings() { DevKey = key, CobrandCode = cobrand, SiteId = siteid, TargetSite = new TargetSiteMock(domain) }) {
+            : base(new ExternalID(externalID), new APISettings() { DevKey = key, CobrandCode = cobrand, SiteId = siteid, TargetSite = new TargetSiteMock(domain) }) {
+        }
+
+        public UserReqStub(List<QsParam> qsList, string key, string domain, string cobrand, string siteid)
+            : base(qsList, new APISettings() { DevKey = key, CobrandCode = cobrand, SiteId = siteid, TargetSite = new TargetSiteMock(domain) }) {
         }
 
         public string ExternalID {
-            get { return _ExternalID; }
+            get {
+                return this.QsParams.Find(x => x.GetType() == typeof(ExternalID)).value;
+            }
         }
 
         public string DevKey {
