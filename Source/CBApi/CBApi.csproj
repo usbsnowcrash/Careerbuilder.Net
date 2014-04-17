@@ -68,6 +68,7 @@
     <Compile Include="Framework\Requests\JobReportRequest.cs" />
     <Compile Include="Framework\Requests\PostRequest.cs" />
     <Compile Include="Framework\Requests\PutRequest.cs" />
+    <Compile Include="Framework\Requests\QsParam.cs" />
     <Compile Include="Framework\Requests\RetrieveASavedSearch.cs" />
     <Compile Include="Framework\Requests\SavedSearchCreateRequest.cs" />
     <Compile Include="Framework\Requests\SavedSearchListRequest.cs" />

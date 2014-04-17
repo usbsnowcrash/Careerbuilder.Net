@@ -7,19 +7,16 @@ namespace CBApi.Framework.Requests
 {
     internal class UserRecommendationsRequest : GetRequest
     {
-        protected string _ExternalID = "";
+        protected List<QsParam> _QsParams = new List<QsParam>();
 
-        public UserRecommendationsRequest(string externalID, APISettings settings)
-            : base(settings)
-        {
-            if (!string.IsNullOrEmpty(externalID))
-            {
-                _ExternalID = externalID;
-            }
-            else
-            {
-                throw new ArgumentNullException("externalID", "ExternalID is requried");
-            }
+        public UserRecommendationsRequest(QsParam QsParam, APISettings settings)
+            : base(settings) {
+            this._QsParams.Add(QsParam);
+        }
+
+        public UserRecommendationsRequest(List<QsParam> QsParams, APISettings settings)
+            : base(settings) {
+                this._QsParams = QsParams;
         }
 
         public override string BaseUrl
@@ -29,12 +26,18 @@ namespace CBApi.Framework.Requests
 
         public List<RecommendJobResult> GetRecommendations()
         {
-            _request.AddParameter("ExternalID", _ExternalID);
+            AddQueryStrings();     
             _request.RootElement = "RecommendJobResults";
             base.BeforeRequest();
             IRestResponse<List<RecommendJobResult>> response = _client.Execute<List<RecommendJobResult>>(_request);
             CheckForErrors(response);
             return response.Data;
         }
+
+        public void AddQueryStrings() {
+            if(_QsParams.Count > 0)
+                _QsParams.ForEach(param => param.addIDParam(_request)); 
+        }
+
     }
 }
