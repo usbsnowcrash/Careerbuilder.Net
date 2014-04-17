@@ -14,13 +14,13 @@ namespace Tests.CBApi.framework.requests
     {
 
         [TestMethod]
-        public void Verify_QSVars() {
-            List<QsParam> qsList = new List<QsParam>();
-            qsList.Add(new GenericParam("name", "value"));
-            qsList.Add(new GenericParam("name2", "value2"));
-            var request = new UserReqStub(qsList , "DevKey", "api.careerbuilder.com", "", "");
+        public void VerifyQueryStrings() {
+            List<QsParam> QueryStringList = new List<QsParam>();
+            QueryStringList.Add(new GenericParam("name", "value"));
+            QueryStringList.Add(new GenericParam("name2", "value2"));
+            var request = new UserReqStub(QueryStringList , "DevKey", "api.careerbuilder.com", "", "");
             //add parameters and verify that both were added.
-            request.addQsParams();
+            request.AddQueryStrings();
             Assert.IsTrue(2 == request.Request.Parameters.Count);
             
         }

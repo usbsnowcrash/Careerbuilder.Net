@@ -16,7 +16,7 @@ namespace Tests.CBApi.models.requests {
 
         public string ExternalID {
             get {
-                return this.QsParams.Find(x => x.GetType() == typeof(ExternalID)).value;
+                return this._QsParams.Find(x => x.GetType() == typeof(ExternalID)).value;
             }
         }
 
