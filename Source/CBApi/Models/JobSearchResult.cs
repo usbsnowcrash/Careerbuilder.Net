@@ -19,6 +19,7 @@ namespace CBApi.Models.Responses {
         public float LocationLongitude { get; set; }
         public string Location { get; set; }
         public string PostedDate { get; set; }
+        public string PostedTime { get; set; }
         public string Pay { get; set; }
         public string SimilarJobsURL { get; set; }
         public string JobTitle { get; set; }

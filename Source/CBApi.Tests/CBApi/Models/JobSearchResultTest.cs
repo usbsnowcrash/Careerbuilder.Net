@@ -37,6 +37,7 @@ namespace Tests.CBApi.models {
             Assert.AreEqual(35.04644f, output.Results[0].LocationLatitude);
             Assert.AreEqual(-85.30946f, output.Results[0].LocationLongitude);
             Assert.AreEqual("10/28/2012", output.Results[0].PostedDate);
+            Assert.AreEqual("5/15/2014 7:19:36 AM", output.Results[0].PostedTime);
             Assert.AreEqual("$70k - $80k/year", output.Results[0].Pay);
             Assert.AreEqual("http://www.careerbuilder.com/jobseeker/jobs/recommendedjobs.aspx?ipath=JELO&job_did=JHM0LH6LPCGLF3FR3ZB", output.Results[0].SimilarJobsURL);
             Assert.AreEqual("Medical Sales-Tissue Graft/Biologics-Wound Care", output.Results[0].JobTitle);
