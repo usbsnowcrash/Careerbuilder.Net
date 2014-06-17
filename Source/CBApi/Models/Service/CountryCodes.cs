@@ -39,6 +39,7 @@
         S1, // 
         SF, // staffnurse.com 
         SG, // sologig.com
+        US, // careerbuilder.com
         WM, // miracleworkers.com
         WR // workinretail.com
     }
