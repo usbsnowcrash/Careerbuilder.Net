@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CBApi.Models.Responses {
     [Serializable]
     public class JobSearchResult {
-
         public string Company { get; set; }
         public string CompanyDID { get; set; }
         public string CompanyDetailsURL { get; set; }
@@ -13,6 +13,8 @@ namespace CBApi.Models.Responses {
         public string DescriptionTeaser { get; set; }
         public string Distance { get; set; }
         public string EmploymentType { get; set; }
+        public string EducationRequired { get; set; }
+        public string ExperienceRequired { get; set; } 
         public string JobDetailsURL { get; set; }
         public string JobServiceURL { get; set; }
         public float LocationLatitude { get; set; }
@@ -22,9 +24,9 @@ namespace CBApi.Models.Responses {
         public string PostedTime { get; set; }
         public string Pay { get; set; }
         public string SimilarJobsURL { get; set; }
+        public List<String> Skills { get; set; } 
         public string JobTitle { get; set; }
         public string CompanyImageURL { get; set; }
         public string JobBrandingIcons { get; set; }
-
     }
 }
