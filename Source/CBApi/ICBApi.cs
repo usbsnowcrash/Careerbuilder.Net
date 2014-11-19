@@ -19,6 +19,7 @@ namespace CBApi
         Uri GetOAuthRedirectUri(string clientId, string redirectUri, string permissions);
         BlankApplication GetBlankApplication(string jobDid);
         ICategoryRequest GetCategories();
+        IEducationCodesRequest GetEducationCodes();
         IEmployeeTypesRequest GetEmployeeTypes();
         Job GetJob(string jobDid);
         List<RecommendJobResult> GetRecommendationsForJob(string jobDid);
