@@ -63,6 +63,7 @@
     <Compile Include="Framework\Requests\ApplicationFormRequest.cs" />
     <Compile Include="Framework\Requests\AuthTokenRequest.cs" />
     <Compile Include="Framework\Requests\BaseRequest.cs" />
+    <Compile Include="Framework\Requests\EducationCodesRequest.cs" />
     <Compile Include="Framework\Requests\JobRecommendationsWithUserPreferencesRequest.cs" />
     <Compile Include="Framework\Requests\OAuthRedirectBuilder.cs" />
     <Compile Include="Framework\Requests\JobReportRequest.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Models\GeographySuggestion.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\JobSearchMetaData.cs" />
+    <Compile Include="Models\QueryInterfaces\IEducationCodesRequest.cs" />
     <Compile Include="Models\RequestApplication.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\ResponseJobReport.cs" />

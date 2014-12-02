@@ -263,6 +263,18 @@ namespace CBApi {
         }
 
         /// <summary>
+        /// Make a call to /v1/educationcodes
+        /// </summary>
+        /// <returns>A Educationcodes Request to query against</returns>
+        public IEducationCodesRequest GetEducationCodes()
+        {
+            var req = new EducationCodesRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req;
+        }
+
+        /// <summary>
         /// Make a call to /v1/employeetypes
         /// </summary>
         /// <returns>A Employee Request to query against</returns>
