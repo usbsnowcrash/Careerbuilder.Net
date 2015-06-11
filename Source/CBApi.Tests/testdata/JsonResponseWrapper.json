@@ -1,0 +1,13 @@
+﻿{
+	"TotalResults":1,
+	"ReturnedResults":1,
+	"Results":[
+		{	
+			"Language":"Greek",
+			"Value":"GR"
+		}
+	],
+	"Errors":[],
+	"Timestamp":"2015-06-10T14:56:37.3319476-04:00",
+	"Status":"Success"
+}

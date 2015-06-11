@@ -90,6 +90,7 @@
     <Compile Include="Models\GeographySuggestion.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\JobSearchMetaData.cs" />
+    <Compile Include="Models\JSONResponseWrapper.cs" />
     <Compile Include="Models\QueryInterfaces\IEducationCodesRequest.cs" />
     <Compile Include="Models\RequestApplication.cs" />
     <Compile Include="Models\Response.cs" />
