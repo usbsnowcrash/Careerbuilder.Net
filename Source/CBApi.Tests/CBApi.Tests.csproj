@@ -99,6 +99,7 @@
     <Compile Include="CBApi\framework\requests\OAuthRedirectBuilderTest.cs" />
     <Compile Include="CBApi\models\BlankApplicationTest.cs" />
     <Compile Include="CBApi\models\ApplicationRequirementsTest.cs" />
+    <Compile Include="CBApi\models\JsonResponseWrapperTest.cs" />
     <Compile Include="CBApi\models\QuestionTest.cs" />
     <Compile Include="CBApi\models\JobSearchResultTest.cs" />
     <Compile Include="CBApi\models\RecommendJobResultTest.cs" />
@@ -127,6 +128,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="testdata\JsonResponseWrapper.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CBApi\framework\events\" />
