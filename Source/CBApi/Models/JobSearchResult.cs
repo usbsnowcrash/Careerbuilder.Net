@@ -11,6 +11,7 @@ namespace CBApi.Models.Responses {
         public string OnetCode { get; set; }
         public string ONetFriendlyTitle { get; set; }
         public string DescriptionTeaser { get; set; }
+        public string DisplayCity { get; set; }
         public string Distance { get; set; }
         public string EmploymentType { get; set; }
         public string EducationRequired { get; set; }

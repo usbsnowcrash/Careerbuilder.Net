@@ -29,6 +29,7 @@ namespace Tests.CBApi.models {
             Assert.AreEqual("c35x165rs82x1bnbbc", output.Results[0].CompanyDID);
             Assert.AreEqual("http://www.careerbuilder.com/Jobs/Company/C35X165RS82X1BNBBC/Direct-Sales-Recruiting-LLC/?sc_cmp1=13_JobRes_ComDet", output.Results[0].CompanyDetailsURL);
             Assert.AreEqual("JHM0LH6LPCGLF3FR3ZB", output.Results[0].DID);
+            Assert.AreEqual("Mars", output.Results[0].DisplayCity);
             Assert.AreEqual("41-4011.00", output.Results[0].OnetCode);
             Assert.AreEqual("Full-Time", output.Results[0].EmploymentType);
             Assert.AreEqual("http://api.careerbuilder.com/v1/joblink?TrackingID=DLR0T71H&DID=JHM0LH6LPCGLF3FR3ZB", output.Results[0].JobDetailsURL);
