@@ -19,4 +19,13 @@
   <HostSite>US</HostSite>
   <PostingDate>12/9/2012 12:00:00 AM</PostingDate>
   <CanBeQuickApplied>True</CanBeQuickApplied>
+  <MatcherType>CX</MatcherType>
+  <EducationRequired>Not Specified</EducationRequired>
+  <Skills/>
+  <EmploymentType>Full-Time</EmploymentType>
+  <ExperienceRequired>Not Specified</ExperienceRequired>
+  <Pay>$20k - $30k/year</Pay>
+  <ApplyRequirements>
+    <ApplyRequirement>CanBulkApply</ApplyRequirement>
+  </ApplyRequirements>
 </RecommendJobResult>

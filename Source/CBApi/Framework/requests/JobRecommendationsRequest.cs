@@ -20,7 +20,7 @@ namespace CBApi.Framework.Requests {
         }
 
         public override string BaseUrl {
-            get { return "/v1/recommendations/forjob"; }
+            get { return "/v2/recommendations/forjob"; }
         }
 
         public List<RecommendJobResult> GetRecommendations() {

@@ -34,6 +34,11 @@ namespace Tests.com.careerbuilder.CBApi.models
             Assert.AreEqual("DE", output.Location.State);
             Assert.AreEqual("Fabrication - Assembly - Sheet Metal", output.Title);
             Assert.AreEqual(true, output.CanBeQuickApplied);
+            Assert.AreEqual("CX", output.MatcherType);
+            Assert.AreEqual("Not Specified", output.EducationRequired);
+            Assert.AreEqual("Full-Time", output.EmploymentType);
+            Assert.AreEqual("$20k - $30k/year", output.Pay);
+            Assert.AreEqual("CanBulkApply", output.ApplyRequirements[0]);
         }
     }
 }

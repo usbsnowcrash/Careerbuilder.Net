@@ -42,7 +42,7 @@ namespace Tests.CBApi.framework.requests {
         [TestMethod]
         public void GetRequestURL_BuildsCorrectEndpointAddress() {
             var request = new JobRecRequestStub("J1234567890123456789", "DevKey", "api.careerbuilder.com", "", "");
-            Assert.AreEqual("https://api.careerbuilder.com/v1/recommendations/forjob", request.RequestURL);
+            Assert.AreEqual("https://api.careerbuilder.com/v2/recommendations/forjob", request.RequestURL);
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace Tests.CBApi.framework.requests {
             restReq.SetupSet(x => x.RootElement = "RecommendJobResults");
 
             var restClient = new Mock<IRestClient>();
-            restClient.SetupSet(x => x.BaseUrl = "https://api.careerbuilder.com/v1/recommendations/forjob");
+            restClient.SetupSet(x => x.BaseUrl = "https://api.careerbuilder.com/v2/recommendations/forjob");
             restClient.Setup(x => x.Execute<List<RecommendJobResult>>(It.IsAny<IRestRequest>())).Returns(response);
 
             request.Request = restReq.Object;
