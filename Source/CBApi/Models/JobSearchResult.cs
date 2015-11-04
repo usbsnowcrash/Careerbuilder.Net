@@ -25,7 +25,9 @@ namespace CBApi.Models.Responses {
         public string PostedTime { get; set; }
         public string Pay { get; set; }
         public string SimilarJobsURL { get; set; }
-        public List<String> Skills { get; set; } 
+        public List<String> Skills { get; set; }
+        public string StreetAddress1 { get; set; }
+        public string StreetAddress2 { get; set; }
         public string JobTitle { get; set; }
         public string CompanyImageURL { get; set; }
         public string JobBrandingIcons { get; set; }
