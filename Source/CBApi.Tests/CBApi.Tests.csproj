@@ -151,6 +151,7 @@
     </Content>
     <Content Include="testdata\ResponseJobSearch.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="testdata\ResponseJobSearchWithFacets.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

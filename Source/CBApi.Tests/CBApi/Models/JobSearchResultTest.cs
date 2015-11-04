@@ -45,6 +45,8 @@ namespace Tests.CBApi.models {
             Assert.AreEqual("http://emj.icbdr.com/MediaManagement/QS/I8F50C63D7B6SGPDXQS.gif", output.Results[0].CompanyImageURL);
             Assert.IsNotNull(output.Facets);
             Assert.AreEqual(0, output.Facets.Count);
+            Assert.AreEqual("1895 Tully Rd", output.Results[0].StreetAddress1);
+            Assert.AreEqual("Suite 187", output.Results[0].StreetAddress2);
         }
 
         [TestMethod]
