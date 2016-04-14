@@ -5,6 +5,7 @@ using CBApi.Models;
 using CBApi.Models.Responses;
 using CBApi.Models.Service;
 using System;
+using System.Collections.Specialized;
 using CBApi.Framework.Events;
 
 namespace CBApi {
@@ -144,6 +145,14 @@ namespace CBApi {
             WireBeforeRequestEvents(req);
             WireAfterRequestEvents(req);
             return req.Retrieve();
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public string ApplyLink(NameValueCollection request) {
+            ApplyLinkRequest applyRequest = new ApplyLinkRequest(request, _Settings);
+            return applyRequest.Retrieve();
         }
 
         /// <summary>
