@@ -97,6 +97,7 @@
     <Compile Include="CBApi\framework\stubrequests\JobRequestStub.cs" />
     <Compile Include="CBApi\framework\stubrequests\JobSearchStub.cs" />
     <Compile Include="CBApi\framework\requests\OAuthRedirectBuilderTest.cs" />
+    <Compile Include="CBApi\models\ApplyLinkTest.cs" />
     <Compile Include="CBApi\models\BlankApplicationTest.cs" />
     <Compile Include="CBApi\models\ApplicationRequirementsTest.cs" />
     <Compile Include="CBApi\models\JsonResponseWrapperTest.cs" />
