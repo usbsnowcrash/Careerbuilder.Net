@@ -1,12 +1,8 @@
 ﻿using CBApi;
-using CBApi.Framework.Requests;
-using CBApi.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using RestSharp;
 using System;
-using Tests.CBApi.models.requests;
-using Tests.CBApi.models.service;
 using System.Collections.Specialized;
 
 namespace Tests.com.careerbuilder.CBApi.framework.requests {

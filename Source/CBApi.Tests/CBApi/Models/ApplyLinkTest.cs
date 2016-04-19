@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CBApi;
-using CBApi.Framework.Requests;
-using CBApi.Models;
+﻿using CBApi.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Specialized;
 

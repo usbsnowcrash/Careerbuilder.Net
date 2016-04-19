@@ -1,9 +1,8 @@
-﻿using CBApi.Framework.Requests;
-using CBApi;
+﻿using CBApi;
+using CBApi.Framework.Requests;
 using CBApi.Models;
-using System.Collections.Specialized;
 using RestSharp;
-using Tests.CBApi.models.service;
+using System.Collections.Specialized;
 
 namespace Tests.com.careerbuilder.CBApi.framework.requests {
     internal class ApplyLinkRequestStub : ApplyLinkRequest {
