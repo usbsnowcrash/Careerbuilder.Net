@@ -18,7 +18,7 @@ namespace CBApi.Models {
         public ApplyLink(NameValueCollection args) {
             foreach (string arg in args.Keys) {
                 this.GetType().GetProperty(arg).SetValue(this, args[arg], null);
-	        }
+	    }
             foreach (PropertyInfo property in this.GetType().GetProperties()) {
                 if (property.GetValue(this, null) == null) {
                     property.SetValue(this, String.Empty, null);
