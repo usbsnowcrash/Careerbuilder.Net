@@ -23,6 +23,8 @@ namespace CBApiCosoleApp {
             svc.OnBeforeRequest += new BeforeRequestEvent(HandleBeforeRequest);
             svc.OnAfterRequest += new AfterRequestEvent(HandleAfterRequest);
 
+            Console.WriteLine(svc.ApplyLink(new System.Collections.Specialized.NameValueCollection() { { "HostSite", "US" }, { "JobDID", "J3H2GZ67DPGRQV8287H" } }));
+
             //////ResponseJobReport jobReport = svc.JobReport("J3J67S75826K34DRBMB");
 
 
