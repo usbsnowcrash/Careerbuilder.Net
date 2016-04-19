@@ -14,13 +14,13 @@ namespace Tests.com.careerbuilder.CBApi.models
         public static void Before(TestContext context)
         {
             args = new NameValueCollection() {
-            {"JobDID", "Fake_DID"},
-            {"SiteID", "Fake_Site_ID"},
-            {"HostSite", "US"},
-            {"JApply", "Fake_JApply"},
-            {"ApplicationEmail", "bob@test.org"},
-            {"TrackingID", "Fake_TrackingID"},
-            {"Cobrand", "Fake_Cobrand"}
+                {"JobDID", "Fake_DID"},
+                {"SiteID", "Fake_Site_ID"},
+                {"HostSite", "US"},
+                {"JApply", "Fake_JApply"},
+                {"ApplicationEmail", "bob@test.org"},
+                {"TrackingID", "Fake_TrackingID"},
+                {"Cobrand", "Fake_Cobrand"}
             };
             applyLink = new ApplyLink(args);
         }
