@@ -11,7 +11,7 @@ using System.Collections.Specialized;
 namespace Tests.com.careerbuilder.CBApi.models
 {
     [TestClass]
-    public class ApplyLinkTest
+    public class ApplyLinkFromNameValueCollectionTest
     {
         private static NameValueCollection args;
         private static ApplyLink applyLink;
@@ -20,7 +20,6 @@ namespace Tests.com.careerbuilder.CBApi.models
         public static void Before(TestContext context)
         {
             args = new NameValueCollection() {
-            {"DeveloperKey", "Fake_Key"}, 
             {"JobDID", "Fake_DID"},
             {"SiteID", "Fake_Site_ID"},
             {"HostSite", "US"},
@@ -30,12 +29,6 @@ namespace Tests.com.careerbuilder.CBApi.models
             {"Cobrand", "Fake_Cobrand"}
             };
             applyLink = new ApplyLink(args);
-        }
-
-        [TestMethod]
-        public void ApplyLink_Gets_DeveloperKey_From_NameValueCollection()
-        {
-            Assert.AreEqual("Fake_Key", applyLink.DeveloperKey);
         }
 
         [TestMethod]

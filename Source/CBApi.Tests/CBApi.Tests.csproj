@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CBApi\framework\ErrorParserTests.cs" />
+    <Compile Include="CBApi\framework\requests\ApplyLinkRequestStub.cs" />
     <Compile Include="CBApi\framework\requests\BlankAppStub.cs" />
     <Compile Include="CBApi\framework\requests\EducationCodesRequestTest.cs" />
     <Compile Include="CBApi\framework\requests\RetrieveASavedSearchTests.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="CBApi\framework\requests\PostRequestTest.cs" />
     <Compile Include="CBApi\framework\requests\GetRequestTest.cs" />
     <Compile Include="CBApi\framework\requests\ApplicationFormRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\ApplyLinkRequestTest.cs" />
     <Compile Include="CBApi\framework\stubrequests\AuthTokenRequestStub.cs" />
     <Compile Include="CBApi\framework\requests\CategoriesRequestTest.cs" />
     <Compile Include="CBApi\framework\requests\BlankApplicationTest.cs" />

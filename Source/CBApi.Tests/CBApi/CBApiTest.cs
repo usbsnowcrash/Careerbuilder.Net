@@ -38,10 +38,16 @@ namespace Tests.CBApi
         //}
 
         [TestMethod]
-        public void Application_Link_Request()
+        public void Application_Link_Request_With_NameValueCollection_Returns_String()
         {
             var svc = new CbApi();
             Assert.IsInstanceOfType(svc.ApplyLink(new NameValueCollection()), typeof(string));
+        }
+
+        [TestMethod]
+        public void Application_Link_Request_With_ApplyLink_Returns_String() {
+            var svc = new CbApi();
+            Assert.IsInstanceOfType(svc.ApplyLink(new ApplyLink()), typeof(string));
         }
 
         [TestMethod]

@@ -16,6 +16,8 @@ namespace CBApi.Models {
         public string TrackingID { get; set; }
         public string Cobrand { get; set; }
 
+        public ApplyLink() : this(new NameValueCollection()) { }
+
         public ApplyLink(NameValueCollection args) {
             foreach (string arg in args.Keys) {
                 this.GetType().GetProperty(arg).SetValue(this, args[arg], null);

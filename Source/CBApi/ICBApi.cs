@@ -40,5 +40,6 @@ namespace CBApi
         AnonymousApplicationResponse AnonymousApplication(AnonymousApplicationRequest request);
 
         String ApplyLink(NameValueCollection request);
+        String ApplyLink(ApplyLink request);
     }
 }
