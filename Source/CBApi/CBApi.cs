@@ -5,6 +5,7 @@ using CBApi.Models;
 using CBApi.Models.Responses;
 using CBApi.Models.Service;
 using System;
+using System.Collections.Specialized;
 using CBApi.Framework.Events;
 
 namespace CBApi {
@@ -144,6 +145,26 @@ namespace CBApi {
             WireBeforeRequestEvents(req);
             WireAfterRequestEvents(req);
             return req.Retrieve();
+        }
+
+        /// <summary>
+        /// Gets the ApplyLink for a Job
+        /// </summary>
+        /// <param name="request">A named value collection of params to pass to the api</param>
+        /// <returns>The uri to apply to the given job.</returns>
+        public string ApplyLink(NameValueCollection request) {
+            ApplyLinkRequest applyRequest = new ApplyLinkRequest(request, _Settings);
+            return applyRequest.Retrieve();
+        }
+
+        /// <summary>
+        /// Gets the ApplyLink for a Job
+        /// </summary>
+        /// <param name="request">An ApplyLink values collection to pass to the api.</param>
+        /// <returns>The uri to apply to the given job.</returns>
+        public string ApplyLink(ApplyLink request) {
+            ApplyLinkRequest applyRequest = new ApplyLinkRequest(request, _Settings);
+            return applyRequest.Retrieve();
         }
 
         /// <summary>

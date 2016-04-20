@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CBApi.Models;
 using CBApi.Models.Responses;
 using CBApi.Framework.Events;
+using System.Collections.Specialized;
 
 namespace CBApi
 {
@@ -37,5 +38,8 @@ namespace CBApi
 
         SavedSearchDeleteResponse DeleteSavedSearchXML(RequestSavedSearchDelete search);
         AnonymousApplicationResponse AnonymousApplication(AnonymousApplicationRequest request);
+
+        String ApplyLink(NameValueCollection request);
+        String ApplyLink(ApplyLink request);
     }
 }

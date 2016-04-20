@@ -61,6 +61,7 @@
     <Compile Include="Framework\RequestEventData.cs" />
     <Compile Include="Framework\Requests\AnonymousApplication.cs" />
     <Compile Include="Framework\Requests\ApplicationFormRequest.cs" />
+    <Compile Include="Framework\Requests\ApplyLinkRequest.cs" />
     <Compile Include="Framework\Requests\AuthTokenRequest.cs" />
     <Compile Include="Framework\Requests\BaseRequest.cs" />
     <Compile Include="Framework\Requests\EducationCodesRequest.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Models\AnonymousApplicationResponse.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\ApplicationRequirements.cs" />
+    <Compile Include="Models\ApplyLink.cs" />
     <Compile Include="Models\Bucket.cs" />
     <Compile Include="Models\AccessToken.cs" />
     <Compile Include="Models\Facets\Facet.cs" />

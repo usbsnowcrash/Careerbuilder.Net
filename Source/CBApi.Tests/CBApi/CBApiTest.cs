@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Specialized;
 using CBApi;
 using CBApi.Models;
 using CBApi.Models.Service;
@@ -35,6 +36,19 @@ namespace Tests.CBApi
         //    CBApi svc = new CBApi();
         //    Assert.IsInstanceOfType(svc.GetBlankApplication(), typeof(BlankApplication));
         //}
+
+        [TestMethod]
+        public void Application_Link_Request_With_NameValueCollection_Returns_String()
+        {
+            var svc = new CbApi();
+            Assert.IsInstanceOfType(svc.ApplyLink(new NameValueCollection()), typeof(string));
+        }
+
+        [TestMethod]
+        public void Application_Link_Request_With_ApplyLink_Returns_String() {
+            var svc = new CbApi();
+            Assert.IsInstanceOfType(svc.ApplyLink(new ApplyLink()), typeof(string));
+        }
 
         [TestMethod]
         public void JobSearch_ReturnsJobSearchRequest()
