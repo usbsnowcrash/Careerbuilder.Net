@@ -1,0 +1,105 @@
+﻿using CBApi;
+using CBApi.Framework.Requests;
+using CBApi.Models;
+using NUnit.Framework;
+using Moq;
+using RestSharp;
+using System;
+using Tests.CBApi.models.requests;
+using Tests.CBApi.models.service;
+
+namespace Tests.CBApi.framework.requests
+{
+    [TestFixture]
+    public class BlankApplicationTest
+    {
+        [Test]
+        public void Constructor_SetsJobDID()
+        {
+            var request = new BlankAppStub("JXXXXXXXXXXXXXXXXXX", "DevKey", "api.careerbuilder.com", "", "");
+            Assert.AreEqual("JXXXXXXXXXXXXXXXXXX", request.JobDID);
+        }
+
+        [Test]
+        public void Constructor_ThrowsException_WhenPassedNullOrEmpty()
+        {
+            try
+            {
+                var request = new BlankAppStub(null, "DevKey", "api.careerbuilder.com", "", "");
+                Assert.Fail("Should have thrown exception");
+            }
+            catch (ArgumentNullException ex)
+            {
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
+            }
+
+            try
+            {
+                var request = new BlankAppStub("", "DevKey", "api.careerbuilder.com", "", "");
+                Assert.Fail("Should have thrown exception");
+            }
+            catch (ArgumentNullException ex)
+            {
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
+            }
+        }
+
+        [Test]
+        public void Constructor_ThrowsException_WhenPassedBadJobDID()
+        {
+            try
+            {
+                var request = new BlankAppStub("UXXXXXXXXXXXXXXXXXXX", "DevKey", "api.careerbuilder.com", "", "");
+                Assert.Fail("Should have thrown exception");
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.IsInstanceOf<ArgumentException>(ex);
+            }
+
+            try
+            {
+                var request = new BlankAppStub("JXXXXXXXXXXX", "DevKey", "api.careerbuilder.com", "", "");
+                Assert.Fail("Should have thrown exception");
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.IsInstanceOf<ArgumentException>(ex);
+            }
+        }
+
+        [Test]
+        public void GetRequestURL_BuildsCorrectEndpointAddress()
+        {
+            var request = new BlankAppStub("JXXXXXXXXXXXXXXXXXX", "DevKey", "api.careerbuilder.com", "", "");
+            Assert.AreEqual("https://api.careerbuilder.com/v1/application/blank", request.RequestURL);
+        }
+
+        [Test]
+        public void Retrieve_PerformsCorrectRequest()
+        {
+            //Setup
+            var request = new BlankAppStub("JXXXXXXXXXXXXXXXXXX", "DevKey", "api.careerbuilder.com", "", "");
+
+            //Mock crap
+            var response = new RestResponse<BlankApplication> {Data = new BlankApplication()};
+
+            var restReq = new Mock<IRestRequest>();
+            restReq.Setup(x => x.AddParameter("DeveloperKey", "DevKey"));
+            restReq.Setup(x => x.AddParameter("JobDID", "JXXXXXXXXXXXXXXXXXX"));
+            restReq.SetupSet(x => x.RootElement = "BlankApplication");
+
+            var restClient = new Mock<IRestClient>();
+            restClient.SetupSet(x => x.BaseUrl = "https://api.careerbuilder.com/v1/application/blank");
+            restClient.Setup(x => x.Execute<BlankApplication>(It.IsAny<IRestRequest>())).Returns(response);
+
+            request.Request = restReq.Object;
+            request.Client = restClient.Object;
+
+            //Assert
+            BlankApplication resp = request.Retrieve();
+            restReq.VerifyAll();
+            restClient.VerifyAll();
+        }
+    }
+}

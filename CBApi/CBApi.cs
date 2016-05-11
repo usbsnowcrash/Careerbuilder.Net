@@ -1,0 +1,385 @@
+﻿using System.Collections.Generic;
+using CBApi.Properties;
+using CBApi.Framework.Requests;
+using CBApi.Models;
+using CBApi.Models.Responses;
+using CBApi.Models.Service;
+using System;
+using System.Collections.Specialized;
+using CBApi.Framework.Events;
+
+namespace CBApi {
+    public class CbApi : ICBApi {
+        #region attributes
+        protected APISettings _Settings = new APISettings();
+        protected List<BeforeRequestEvent> _BeforeListeners = new List<BeforeRequestEvent>();
+        protected List<AfterRequestEvent> _AfterListeners = new List<AfterRequestEvent>();
+
+        public string DevKey {
+            get { return _Settings.DevKey; }
+            set { _Settings.DevKey = value; }
+        }
+        public string CobrandCode {
+            get { return _Settings.CobrandCode; }
+            set { _Settings.CobrandCode = value; }
+        }
+        public string SiteId {
+            get { return _Settings.SiteId; }
+            set { _Settings.SiteId = value; }
+        }
+
+        public virtual int TimeoutMS {
+            get { return _Settings.TimeoutMS; }
+            set { _Settings.TimeoutMS = value; }
+        }
+
+        public event BeforeRequestEvent OnBeforeRequest {
+            add { _BeforeListeners.Add(value); }
+            remove { _BeforeListeners.Remove(value); }
+        }
+
+        public event AfterRequestEvent OnAfterRequest {
+            add { _AfterListeners.Add(value); }
+            remove { _AfterListeners.Remove(value); }
+        }
+        #endregion
+
+        #region construction and factories
+
+        protected internal CbApi() {
+            _Settings.TargetSite = new CareerBuilderCom();
+            _Settings.DevKey = Settings.Default.DevKey;
+        }
+
+        protected internal CbApi(string key) {
+            _Settings.TargetSite = new CareerBuilderCom();
+            _Settings.DevKey = key;
+        }
+
+        protected internal CbApi(string key, int timeout) {
+            _Settings.TargetSite = new CareerBuilderCom();
+            _Settings.DevKey = key;
+            _Settings.TimeoutMS = timeout;
+        }
+
+        protected internal CbApi(string key, int timeout, TargetSite site) {
+            _Settings.TargetSite = site;
+            _Settings.DevKey = key;
+            _Settings.TimeoutMS = timeout;
+        }
+
+        protected internal CbApi(string key, string cobrandCode) {
+            _Settings.TargetSite = new CareerBuilderCom();
+            _Settings.DevKey = key;
+            _Settings.CobrandCode = cobrandCode;
+        }
+
+        protected internal CbApi(string key, string cobrandCode, string siteid) {
+            _Settings.TargetSite = new CareerBuilderCom();
+            _Settings.DevKey = key;
+            _Settings.CobrandCode = cobrandCode;
+            _Settings.SiteId = siteid;
+        }
+
+        #endregion
+
+        protected void WireBeforeRequestEvents(BaseRequest req) {
+            foreach (var item in _BeforeListeners) {
+                req.OnBeforeRequest += item;
+            }
+        }
+
+        protected void WireAfterRequestEvents(BaseRequest req) {
+            foreach (var item in _AfterListeners) {
+                req.OnAfterRequest += item;
+            }
+        }
+
+        #region api calls
+        /// <summary>
+        /// Make a call to /auth/token
+        /// </summary>
+        /// <param name="clientId">20 character long external client ID.</param>
+        /// <param name="clientSecret">64 character long external client secret.</param>
+        /// <param name="code">20 character long OAuth authorization grant code returned from auth/prompt redirection.</param>
+        /// <param name="redirectUri">URL that was provided at the time of external client registration.</param>
+        /// <returns></returns>
+        public AccessToken GetAccessToken(string clientId, string clientSecret, string code, string redirectUri) {
+            var req = new AuthTokenRequest(clientId, clientSecret, code, redirectUri, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.GetAccessToken();
+        }
+
+        /// <summary>
+        /// Gets the Uri to redirect to for OAuth
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="redirectUri"></param>
+        /// <param name="permissions"></param>
+        /// <returns></returns>
+        public Uri GetOAuthRedirectUri(string clientId, string redirectUri, string permissions) {
+            var req = new OAuthRedirectBuilder(clientId, redirectUri, permissions, _Settings.TargetSite.Domain);
+            return req.OAuthUri();
+        }
+
+        /// <summary>
+        /// Make a call to /v1/application/blank
+        /// </summary>
+        /// <param name="JobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public BlankApplication GetBlankApplication(string jobDid) {
+            var req = new BlankApplicationRequest(jobDid, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Retrieve();
+        }
+
+        /// <summary>
+        /// Make a call to /v1/application/form
+        /// </summary>
+        /// <param name="JobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public string GetApplicationForm(string jobDid) {
+            var req = new ApplicationFormRequest(jobDid, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Retrieve();
+        }
+
+        /// <summary>
+        /// Gets the ApplyLink for a Job
+        /// </summary>
+        /// <param name="request">A named value collection of params to pass to the api</param>
+        /// <returns>The uri to apply to the given job.</returns>
+        public string ApplyLink(NameValueCollection request) {
+            ApplyLinkRequest applyRequest = new ApplyLinkRequest(request, _Settings);
+            return applyRequest.Retrieve();
+        }
+
+        /// <summary>
+        /// Gets the ApplyLink for a Job
+        /// </summary>
+        /// <param name="request">An ApplyLink values collection to pass to the api.</param>
+        /// <returns>The uri to apply to the given job.</returns>
+        public string ApplyLink(ApplyLink request) {
+            ApplyLinkRequest applyRequest = new ApplyLinkRequest(request, _Settings);
+            return applyRequest.Retrieve();
+        }
+
+        /// <summary>
+        /// Submit an application to /v1/application/submit
+        /// </summary>
+        /// <param name="app">The application being submited to careerbuilder</param>
+        /// <returns></returns>
+        public ResponseApplication SubmitApplication(Application app) {
+            RequestApplication req = new RequestApplication();
+            req.CoBrand = app.CoBrand;
+            req.DeveloperKey = app.DeveloperKey;
+            req.JobDID = app.JobDID;
+            req.SiteID = app.SiteID;
+            req.Test = app.Test;
+            req.Resume = app.Resume;
+            List<Response> responses = new List<Response>();
+            foreach (var item in app.Questions) {
+                responses.Add(new Response() { QuestionID = item.QuestionID, ResponseText = item.ResponseText });
+            }
+            req.Responses = responses;
+            return SubmitApplication(req);
+        }
+
+        /// <summary>
+        /// Submit an application to /v1/application/submit
+        /// </summary>
+        /// <param name="app">The application being submited to careerbuilder</param>
+        /// <returns></returns>
+        public ResponseApplication SubmitApplication(RequestApplication app) {
+            var req = new SubmitApplicationRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
+
+        /// create a saved search
+        /// </summary>
+        /// <param name="app">the saved search that is wanting to be saved</param>
+        /// <returns></returns>
+        public SavedSearchCreateResponse CreateSavedSearch(SavedSearchCreate app) {
+            var req = new SavedSearchCreateRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
+        /// Retrieve a single saved search
+        /// </summary>
+        /// <param name="app">Info to lead to the saved search</param>
+        /// <returns></returns>
+        public SavedSearchRetrieveResponseModel RetrieveSavedSearch(SavedSearchRetrieveRequestModel app) {
+            var req = new SavedSearchRetrieveRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
+        /// Lists all saved searches from a single user
+        /// </summary>
+        /// <param name="app">info to lead to the users saved searches</param>
+        /// <returns></returns>
+        public SavedSearchListResponseModel ListSavedSearches(SavedSearchListRequestModel app) {
+            var req = new SavedSearchListRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// <summary>
+        /// Updates a SavedSearch
+        /// </summary>
+        /// <param name="app">The data for the savedsearch</param>
+        /// <returns></returns>
+        public SavedSearchUpdateResponseModel UpdateSavedSearch(SavedSearchUpdateRequestModel app) {
+            var req = new SavedSearchUpdateRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(app);
+        }
+
+        /// Delete a saved search with /v1/savedsearch/delete.xml
+        /// </summary>
+        /// <param name="search">The search being deleted</param>
+        /// <returns></returns>
+        public SavedSearchDeleteResponse DeleteSavedSearchXML(RequestSavedSearchDelete search) {
+            var req = new SavedSearchDeleteRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(search);
+        }
+
+        /// <summary>
+        /// Anonymous apply with /v2/Application/submit
+        /// </summary>
+        /// <param name="request">the input for the application</param>
+        /// <returns></returns>
+        public AnonymousApplicationResponse AnonymousApplication(AnonymousApplicationRequest request) {
+            var req = new AnonymousApplication(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(request);
+        }
+
+        /// <summary>
+        /// Make a call to /v1/categories
+        /// </summary>
+        /// <returns>A Category Request to query against</returns>
+        public ICategoryRequest GetCategories() {
+            var req = new CategoriesRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req;
+        }
+
+        /// <summary>
+        /// Make a call to /v1/educationcodes
+        /// </summary>
+        /// <returns>A Educationcodes Request to query against</returns>
+        public IEducationCodesRequest GetEducationCodes()
+        {
+            var req = new EducationCodesRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req;
+        }
+
+        /// <summary>
+        /// Make a call to /v1/employeetypes
+        /// </summary>
+        /// <returns>A Employee Request to query against</returns>
+        public IEmployeeTypesRequest GetEmployeeTypes() {
+            var req = new EmployeeTypesRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req;
+        }
+
+        /// <summary>
+        /// Make a call to /v1/job
+        /// </summary>
+        /// <param name="JobDID">The unique ID of the job</param>
+        /// <returns>The job</returns>
+        public Job GetJob(string jobDid) {
+            var req = new JobRequest(jobDid, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Retrieve();
+        }
+
+        /// <summary>
+        /// Make a call to /v1/recommendations/forjob
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <returns>The list of recommended jobs, based on the given job.</returns>
+        public List<RecommendJobResult> GetRecommendationsForJob(string jobDid) {
+            var req = new JobRecommendationsRequest(jobDid, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.GetRecommendations();
+        }
+
+        /// <summary>
+        /// Make a call to /v1/recommendations/forjobwithuserprefs
+        /// </summary>
+        /// <param name="jobDID">The unique ID of the job</param>
+        /// <param name="userDid">The unique ID of the user</param>
+        /// <returns>The list of recommended jobs, based on the given job and taking the user's preferences into account.</returns>
+        public List<RecommendJobResult> GetRecommendationsForJobWithUserPreferences(string jobDid, string userDid) {
+            var req = new JobRecommendationsWithUserPreferencesRequest(jobDid, userDid, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.GetRecommendations();
+        }
+
+        /// <summary>
+        /// make a call to /v1/recommendations/foruser
+        /// </summary>
+        /// <param name="externalId">The ID of the user that you wish to get recs for</param>
+        /// <returns></returns>
+        public List<RecommendJobResult> GetRecommendationsForUser(string externalId) {
+            var req = new UserRecommendationsRequest(new ExternalID(externalId), _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.GetRecommendations();
+        }
+
+        /// <summary>
+        /// Make a call to /v1/jobsearch
+        /// </summary>
+        /// <returns>A Job Request to query against</returns>
+        public IJobSearch JobSearch() {
+            var req = new JobSearchRequest(_Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req;
+        }
+
+        public ResponseJobReport JobReport(string jobDid) {
+            var req = new JobReportRequest(jobDid, _Settings);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.GetReport();
+        }
+
+        public Models.WebAPIs.SavedSearch.SavedSearches RetrieveASavedSearch(string savedSearchDID, string userOAuthToken) {
+            var req = new RetrieveASavedSearch(_Settings, savedSearchDID);
+            WireBeforeRequestEvents(req);
+            WireAfterRequestEvents(req);
+            return req.Submit(userOAuthToken);
+        }
+
+        #endregion
+    }
+}
