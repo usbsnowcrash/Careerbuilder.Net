@@ -164,7 +164,7 @@
   <Target Name="BeforeBuild">
   </Target>
   -->
-  <Target Name="AfterBuild">
+  <!-- <Target Name="AfterBuild">
     <MSBuild Condition="'$(Configuration)' == 'Release'" Projects="..\.nuget\NuGet.msbuild" />
-  </Target>
+  </Target>-->
 </Project>
