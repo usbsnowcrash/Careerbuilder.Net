@@ -43,7 +43,7 @@ namespace Tests.CBApi.framework.requests {
             request.Client = restClient.Object;
 
             //Assert
-            ResponseJobSearch resp = request.WhereCountryCode(CountryCode.NL).Search();
+            ResponseJobSearch resp = request.WhereCountryCode("NL").Search();
             restReq.Verify();
             restClient.VerifyAll();
         }
@@ -51,20 +51,20 @@ namespace Tests.CBApi.framework.requests {
         [Test]
         public void WhereCountryCode_ReturnsCategoryRequest() {
             var request = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
-            Assert.IsInstanceOfType(request.WhereCountryCode(CountryCode.SE), typeof(IJobSearch));
+            Assert.IsInstanceOf<IJobSearch>(request.WhereCountryCode("SE"));
         }
 
         [Test]
         public void WhereCountryCode_SetsCountryCode() {
             var request = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
-            request.WhereCountryCode(CountryCode.SE);
+            request.WhereCountryCode("SE");
             Assert.AreEqual("SE", request.CountryCode);
         }
 
         [Test]
         public void WhereHostSite_ReturnsCategoryRequest() {
             var request = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
-            Assert.IsInstanceOfType(request.WhereHostSite(HostSite.EU), typeof(IJobSearch));
+            Assert.IsInstanceOf<IJobSearch>(request.WhereHostSite("EU"));
         }
 
         [Test]

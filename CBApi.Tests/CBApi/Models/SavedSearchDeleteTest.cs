@@ -12,7 +12,7 @@ namespace Tests.CBApi.models {
     {
         [Test]
         public void DeserializationWorks_WhenPassedRightXML() {
-            var xmlpath = Path.Combine(Environment.CurrentDirectory, "SavedSearchDeleteResult.xml");
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","SavedSearchDeleteResult.xml");
             var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();

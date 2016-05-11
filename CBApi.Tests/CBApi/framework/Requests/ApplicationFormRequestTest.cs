@@ -55,7 +55,7 @@
 //            }
 //            catch (ArgumentException ex)
 //            {
-//                Assert.IsInstanceOfType(ex, typeof (ArgumentException));
+//                Assert.IsInstanceOf<ArgumentException>(ex);
 //            }
 
 //            try
@@ -65,7 +65,7 @@
 //            }
 //            catch (ArgumentException ex)
 //            {
-//                Assert.IsInstanceOfType(ex, typeof (ArgumentException));
+//                Assert.IsInstanceOf<ArgumentException>(ex);
 //            }
 //        }
 

@@ -13,7 +13,7 @@ namespace Tests.com.careerbuilder.CBApi.models
     {
         [Test]
         public void VerifyCorrectXml_DeserializesAppropriately() {
-            var xmlpath = Path.Combine(Environment.CurrentDirectory, "RecommendJobResult.xml");
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","RecommendJobResult.xml");
             var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();

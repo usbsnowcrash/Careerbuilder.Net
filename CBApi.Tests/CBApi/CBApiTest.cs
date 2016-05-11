@@ -13,21 +13,21 @@ namespace Tests.CBApi
         public void Constructor_DefaultsToCareerbuilderCom()
         {
             var svc = new CBApiStub();
-            Assert.IsInstanceOfType(svc.Site, typeof (CareerBuilderCom));
+            Assert.IsInstanceOf<CareerBuilderCom>(svc.Site);
         }
 
         [Test]
         public void GetCategories_ReturnsCategoriesRequest()
         {
             var svc = new CbApi();
-            Assert.IsInstanceOfType(svc.GetCategories(), typeof (ICategoryRequest));
+            Assert.IsInstanceOf<ICategoryRequest>(svc.GetCategories());
         }
 
         [Test]
         public void GetEmployeeTypes_ReturnsEmpRequest()
         {
             var svc = new CbApi();
-            Assert.IsInstanceOfType(svc.GetEmployeeTypes(), typeof (IEmployeeTypesRequest));
+            Assert.IsInstanceOf<IEmployeeTypesRequest>(svc.GetEmployeeTypes());
         }
 
         //[Test]
@@ -53,7 +53,7 @@ namespace Tests.CBApi
         public void JobSearch_ReturnsJobSearchRequest()
         {
             var svc = new CbApi();
-            Assert.IsInstanceOfType(svc.JobSearch(), typeof (IJobSearch));
+            Assert.IsInstanceOf<IJobSearch>(svc.JobSearch());
         }
     }
 

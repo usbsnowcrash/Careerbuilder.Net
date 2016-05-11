@@ -11,7 +11,7 @@ namespace Tests.com.careerbuilder.CBApi.models
         private static ApplyLink applyLink;
 
         [SetUp]
-        public static void Before(TestContext context)
+        public static void Before()
         {
             args = new NameValueCollection() {
                 {"JobDID", "Fake_DID"},

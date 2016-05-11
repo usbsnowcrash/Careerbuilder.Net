@@ -14,8 +14,8 @@ namespace Tests.com.careerbuilder.CBApi.models.service
         [Test]
         public void DeserializationWorks_WhenPassedRightXML_Response()
         {
-            var xmlPath = Path.Combine(Environment.CurrentDirectory, "AnonymousApplicationResponseData.xml");
-            var doc = XDocument.Load(xmlPath);
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","AnonymousApplicationResponseData.xml");
+            var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();
             var output = xml.Deserialize<AnonymousApplicationResponse>(new RestResponse() { Content = doc.ToString() });
@@ -30,8 +30,8 @@ namespace Tests.com.careerbuilder.CBApi.models.service
         [Test]
         public void DeserializationWorks_WhenPassedRightXML_Request()
         {
-            var xmlPath = Path.Combine(Environment.CurrentDirectory, "AnonymousApplicationRequestData.xml");
-            var doc = XDocument.Load(xmlPath);
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata", "AnonymousApplicationRequestData.xml");
+            var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();
             var output = xml.Deserialize<AnonymousApplicationRequest>(new RestResponse() { Content = doc.ToString() });

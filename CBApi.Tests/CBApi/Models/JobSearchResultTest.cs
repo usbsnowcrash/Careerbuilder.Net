@@ -16,7 +16,7 @@ namespace Tests.CBApi.models {
 
         [Test]
         public void DeserializationWorks_WhenPassedRightXML() {
-            var xmlpath = Path.Combine(Environment.CurrentDirectory,"ResponseJobSearch.xml");
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","ResponseJobSearch.xml");
             var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();
@@ -50,7 +50,7 @@ namespace Tests.CBApi.models {
 
         [Test]
         public void DeserializationWorks_WhenPassedRightXML_WithFacets() {
-            var xmlpath = Path.Combine(Environment.CurrentDirectory,"ResponseJobSearchWithFacets.xml");
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","ResponseJobSearchWithFacets.xml");
             var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();

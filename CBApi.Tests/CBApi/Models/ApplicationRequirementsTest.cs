@@ -11,7 +11,7 @@ namespace Tests.CBApi.models {
     public class ApplicationRequirementsTest {
         [Test]
         public void DeserializationWorks_WhenPassedRightXML() {
-            var xmlpath = Path.Combine(Environment.CurrentDirectory, "ResponseBlankApplication.xml");
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","ResponseBlankApplication.xml");
             var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();

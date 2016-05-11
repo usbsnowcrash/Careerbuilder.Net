@@ -21,21 +21,21 @@ namespace Tests.CBApi.framework.requests {
                 var request = new JobRecRequestStub(null, "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
                 var request2 = new JobRecRequestStub("", "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
                 var request3 = new JobRecRequestStub("NotAValidJobDid", "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentException));
+                Assert.IsInstanceOf<ArgumentException>(ex);
             }
         }
 

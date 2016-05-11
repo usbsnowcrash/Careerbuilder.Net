@@ -12,8 +12,8 @@ namespace Tests.com.careerbuilder.CBApi.models {
 
         [Test]
         public void DeserializationWorks_WhenPassedRightXML() {
-            var xmlPath = Path.Combine(Environment.CurrentDirectory, "SavedSearchListResponseModel.xml");
-            var doc = XDocument.Load(xmlPath);
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","SavedSearchListResponseModel.xml");
+            var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();
             var response = xml.Deserialize<SavedSearchListResponseModel>(new RestResponse() { Content = doc.ToString() });

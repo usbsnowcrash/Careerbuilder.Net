@@ -18,7 +18,7 @@ namespace Tests.CBApi.framework.requests {
                 var request = new GetRequestStub("", "api.careerbuilder.com", "", "");
                 Assert.Fail();
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 
@@ -28,7 +28,7 @@ namespace Tests.CBApi.framework.requests {
                 var request = new GetRequestStub(null, "api.careerbuilder.com", "", "");
                 Assert.Fail();
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 
@@ -38,7 +38,7 @@ namespace Tests.CBApi.framework.requests {
                 var request = new GetRequestStub("DevKey", "", "", "");
                 Assert.Fail();
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Tests.CBApi.framework.requests {
                 var request = new GetRequestStub("DevKey", null, "", "");
                 Assert.Fail();
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 

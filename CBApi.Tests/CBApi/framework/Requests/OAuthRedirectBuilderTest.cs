@@ -30,14 +30,14 @@ namespace Tests.CBApi.framework.requests {
                 var request = new OAuthRedirectBuilderStub("", "redirectURI", "", "api.careerbuilder.com");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
                 var request = new OAuthRedirectBuilderStub(null, "redirectURI", "", "api.careerbuilder.com");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 
@@ -47,14 +47,14 @@ namespace Tests.CBApi.framework.requests {
                 var request = new OAuthRedirectBuilderStub("ClientID", "", "", "api.careerbuilder.com");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
                 var request = new OAuthRedirectBuilderStub("ClientID", null, "", "api.careerbuilder.com");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 

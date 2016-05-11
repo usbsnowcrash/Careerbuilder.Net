@@ -15,7 +15,7 @@ namespace Tests.CBApi.models {
     public class ResponseJobSearchTest {
         [Test]
         public void DeserializationWorks_WhenPassedRightXML() {
-            var xmlpath = Path.Combine(Environment.CurrentDirectory,"ResponseJobSearch.xml");
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","ResponseJobSearch.xml");
             var doc = XDocument.Load(xmlpath);
 
             var xml = new XmlDeserializer();

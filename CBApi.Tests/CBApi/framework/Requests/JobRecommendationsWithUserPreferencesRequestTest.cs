@@ -23,21 +23,21 @@ namespace Tests.CBApi.framework.requests {
                 var request = new JobRecWithUserPrefRequestStub(null, null, "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
                 var request2 = new JobRecWithUserPrefRequestStub("", null, "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
                 var request3 = new JobRecWithUserPrefRequestStub("NotAValidJobDid", null, "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentException));
+                Assert.IsInstanceOf<ArgumentException>(ex);
             }
         }
 
@@ -47,14 +47,14 @@ namespace Tests.CBApi.framework.requests {
                 var request = new JobRecWithUserPrefRequestStub("J1234567890123456789", null, "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
                 var request2 = new JobRecWithUserPrefRequestStub("J1234567890123456789", "", "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentNullException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
 
             try {
@@ -62,7 +62,7 @@ namespace Tests.CBApi.framework.requests {
                     "DevKey", "api.careerbuilder.com", "", "");
                 Assert.Fail("Should have thrown exception");
             } catch (ArgumentException ex) {
-                Assert.IsInstanceOfType(ex, typeof(ArgumentException));
+                Assert.IsInstanceOf<ArgumentException>(ex);
             }
         }
 

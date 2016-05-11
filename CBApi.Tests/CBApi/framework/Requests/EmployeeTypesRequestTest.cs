@@ -22,7 +22,7 @@ namespace Tests.CBApi.framework.requests
         public void WhereCountryCode_ReturnsCategoryRequest()
         {
             var request = new EmployeeTypesStub("DevKey", "api.careerbuilder.com");
-            Assert.IsInstanceOfType(request.WhereCountryCode(CountryCode.SE), typeof (IEmployeeTypesRequest));
+            Assert.IsInstanceOf<IEmployeeTypesRequest>(request.WhereCountryCode(CountryCode.SE));
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace Tests.CBApi.framework.requests
         public void WhereHostSite_ReturnsCategoryRequest()
         {
             var request = new EmployeeTypesStub("DevKey", "api.careerbuilder.com");
-            Assert.IsInstanceOfType(request.WhereHostSite(HostSite.EU), typeof (IEmployeeTypesRequest));
+            Assert.IsInstanceOf<IEmployeeTypesRequest>(request.WhereHostSite(HostSite.EU));
         }
 
         [Test]

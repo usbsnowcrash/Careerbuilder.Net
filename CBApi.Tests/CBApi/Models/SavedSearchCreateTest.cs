@@ -14,8 +14,8 @@ namespace Tests.CBApi.models
         [Test]
         public void DeserializationWorks_WhenPassedRightXML()
         {
-            var xmlPath = Path.Combine(Environment.CurrentDirectory, "SaveSearchCreateData.xml");
-            var doc = XDocument.Load(xmlPath);
+            var xmlpath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata","SaveSearchCreateData.xml");
+            var doc = XDocument.Load(xmlpath);
             
             var xml = new XmlDeserializer();
             var output = xml.Deserialize<SavedSearchCreateResponse>(new RestResponse() { Content = doc.ToString() });

@@ -15,7 +15,7 @@ namespace Tests.com.careerbuilder.CBApi.models {
 
         [Test]
         public void DeserializationWorks_WhenPassedRightJSON_Response() {
-            var jsonPath = Path.Combine(Environment.CurrentDirectory, "JsonResponseWrapper.json");
+            var jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdata", "JsonResponseWrapper.json");
             var streamReader = new StreamReader(jsonPath);
             var json = new JsonDeserializer();
 

@@ -20,7 +20,7 @@ namespace Tests.CBApi.framework.requests
             }
             catch (ArgumentNullException ex)
             {
-                Assert.IsInstanceOfType(ex, typeof (ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 
@@ -34,7 +34,7 @@ namespace Tests.CBApi.framework.requests
             }
             catch (ArgumentNullException ex)
             {
-                Assert.IsInstanceOfType(ex, typeof (ArgumentNullException));
+                Assert.IsInstanceOf<ArgumentNullException>(ex);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Tests.CBApi.framework.requests
             }
             catch (ArgumentException ex)
             {
-                Assert.IsInstanceOfType(ex, typeof (ArgumentException));
+                Assert.IsInstanceOf<ArgumentException>(ex);
             }
         }
 
@@ -63,7 +63,7 @@ namespace Tests.CBApi.framework.requests
             }
             catch (ArgumentException ex)
             {
-                Assert.IsInstanceOfType(ex, typeof (ArgumentException));
+                Assert.IsInstanceOf<ArgumentException>(ex);
             }
         }
 
@@ -77,7 +77,7 @@ namespace Tests.CBApi.framework.requests
             }
             catch (ArgumentException ex)
             {
-                Assert.IsInstanceOfType(ex, typeof (ArgumentException));
+                Assert.IsInstanceOf<ArgumentException>(ex);
             }
         }
 
