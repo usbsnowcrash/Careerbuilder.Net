@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResponseBlankApplication>
+	<Errors />
+	<TimeResponseSent>10/28/2012 10:19:01 PM</TimeResponseSent>
+	<TimeElapsed>0.0624004</TimeElapsed>
+	<BlankApplication>
+		<ApplicationSubmitServiceURL>http://api.careerbuilder.com/v1/application/submit</ApplicationSubmitServiceURL>
+		<ApplyURL>http://api.careerbuilder.com/v1/application/applylink?TrackingID=V8YDVG7V&amp;JobDID=JHP3GR6135GF0QC5Q5B</ApplyURL>
+		<JobDID>JHP3GR6135GF0QC5Q5B</JobDID>
+		<JobTitle>Field Service Technician</JobTitle>
+		<Requirements>
+			<DegreeRequired>
+				2 Year Degree
+			</DegreeRequired>
+			<TravelRequired>
+				Not Specified
+			</TravelRequired>
+			<ExperienceRequired>At least 5 year(s)</ExperienceRequired>
+			<RequirementsText>
+				Responsibilities&amp;nbsp;of a &lt;b&gt;Service Technician&lt;/b&gt;, under the&amp;nbsp;guidance of the Field Service Manager include, but are not limited to:&lt;br /&gt;
+				&lt;br /&gt;
+				Performs quality&amp;nbsp;service work on all vehicle wash equipment and accessories, including&amp;nbsp;trouble shooting of electrical, electronic, and mechanical problems to provide customer satisfaction.&amp;nbsp; &lt;br /&gt;
+				&lt;br /&gt;
+				Develops and maintains rapport with our customer base and partners with the customer to&amp;nbsp;make beneficial recommendations regarding the technical maintenance of their state-of-the-art equipment.
+				&amp;nbsp;&lt;br /&gt;
+				&lt;br /&gt;
+				Ensures all information is entered into Ryko's computer system per training specifications and follows all safety procedures and protocols according to Ryko's training curriculum.&amp;nbsp;&amp;nbsp; &lt;br /&gt;
+				&lt;br /&gt;
+				Technicians are trained on all aspects of the technical features of the equipment and will work with customers from installation, start-up, and ongoing maintenance to provide personalized service.
+				&lt;br /&gt;
+				&lt;p&gt;Technicians' email, dispatching, timekeeping, recordkeeping, and billing functions are streamlined with the daily input and technical reference&amp;nbsp;features provided by the company&amp;nbsp;wireless laptop and industry-specific software.&amp;nbsp; Ryko has also incorporated our safety program and training features on the laptop for easy access.&lt;br /&gt;
+				&lt;br /&gt;
+				Ryko was the first in our industry to attain ISO certification, therefore, Technicians are responsible for following all policies and procedures pertaining to Ryko&amp;rsquo;s Quality System.&amp;nbsp;&lt;br /&gt;
+				&lt;br /&gt;
+				If you&amp;nbsp;believe your skill set&amp;nbsp;can meet the&amp;nbsp;quality standards of our technical staff, please send your resume to: &lt;a href="mailto:hr@ryko.com"&gt;hr@ryko.com&lt;/a&gt; or fax to 515.986.7900.&amp;nbsp; &lt;br /&gt;
+				&lt;br /&gt;
+				&lt;br /&gt;
+				For additional information on our company, products and services - visit &lt;a href="http://www.ryko.com"&gt;www.ryko.com&lt;/a&gt; &lt;br /&gt;
+				&lt;br /&gt;
+				&lt;hr&gt;
+				&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;i&gt;Careerbuilder Keywords:&lt;/i&gt;car wash tech, service tech, service technician, field technician, tech, technician, field tech, installation tech, field rep, HVAC, mechanic, installer, repairman, auto technician, service specialist, millwright, millright
+				&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+			</RequirementsText>
+		</Requirements>
+		<TotalQuestions>4</TotalQuestions>
+		<TotalRequiredQuestions>3</TotalRequiredQuestions>
+		<Questions>
+			<Question>
+				<QuestionID>ApplicantName</QuestionID>
+				<QuestionType>Basic</QuestionType>
+				<IsRequired>true</IsRequired>
+				<ExpectedResponseFormat>Text 50</ExpectedResponseFormat>
+				<QuestionText>Your name</QuestionText>
+			</Question>
+			<Question>
+				<QuestionID>ApplicantEmail</QuestionID>
+				<QuestionType>Basic</QuestionType>
+				<IsRequired>true</IsRequired>
+				<ExpectedResponseFormat>Text 50</ExpectedResponseFormat>
+				<QuestionText>Your email</QuestionText>
+			</Question>
+			<Question>
+				<QuestionID>Resume</QuestionID>
+				<QuestionType>Basic</QuestionType>
+				<IsRequired>true</IsRequired>
+				<ExpectedResponseFormat>Text 5000</ExpectedResponseFormat>
+				<QuestionText>Your resume</QuestionText>
+			</Question>
+			<Question>
+				<QuestionID>CoverLetter</QuestionID>
+				<QuestionType>Basic</QuestionType>
+				<IsRequired>false</IsRequired>
+				<ExpectedResponseFormat>Text 5000</ExpectedResponseFormat>
+				<QuestionText>Your cover letter</QuestionText>
+			</Question>
+		</Questions>
+	</BlankApplication>
+</ResponseBlankApplication>

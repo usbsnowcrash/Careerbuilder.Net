@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{563513D2-EDA6-417C-9111-CA0D7C9D6199}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tests.com.careerbuilder</RootNamespace>
+    <AssemblyName>CBApi.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>testdata\AnonymousApplicationRequestData.xml</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.2.1\lib\net40\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CBApi\framework\ErrorParserTests.cs" />
+    <Compile Include="CBApi\framework\requests\ApplyLinkRequestStub.cs" />
+    <Compile Include="CBApi\framework\requests\BlankAppStub.cs" />
+    <Compile Include="CBApi\framework\requests\EducationCodesRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\RetrieveASavedSearchTests.cs" />
+    <Compile Include="CBApi\framework\requests\SavedSearchCreateRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\SavedSearchListRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\SavedSearchRetrieveRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\SavedSearchUpdateRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\SavedSearchDeleteRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\TargetSiteTest.cs" />
+    <Compile Include="CBApi\framework\requests\JobRecommendationsRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\JobRecommendationsWithUserPreferencesRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\SubmitApplicationRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\PostRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\GetRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\ApplicationFormRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\ApplyLinkRequestTest.cs" />
+    <Compile Include="CBApi\framework\stubrequests\AuthTokenRequestStub.cs" />
+    <Compile Include="CBApi\framework\requests\CategoriesRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\BlankApplicationTest.cs" />
+    <Compile Include="CBApi\framework\requests\AuthTokenRequestTest.cs" />
+    <Compile Include="CBApi\framework\stubrequests\CategoriesStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\EducationCodesRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\JobRecRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\JobRecWithUserPrefRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\RetrieveASavedSearchStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\SavedSearchCreateRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\SavedSearchListRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\SavedSearchRetrieveRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\SavedSearchUpdateRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\SavedSearchDeleteRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\SubmitApplicationRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\PostRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\EmployeeTypesStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\GetRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\JobRequestStub.cs" />
+    <Compile Include="CBApi\framework\stubrequests\JobSearchStub.cs" />
+    <Compile Include="CBApi\framework\requests\OAuthRedirectBuilderTest.cs" />
+    <Compile Include="CBApi\models\ApplyLinkTest.cs" />
+    <Compile Include="CBApi\models\BlankApplicationTest.cs" />
+    <Compile Include="CBApi\models\ApplicationRequirementsTest.cs" />
+    <Compile Include="CBApi\models\JsonResponseWrapperTest.cs" />
+    <Compile Include="CBApi\models\QuestionTest.cs" />
+    <Compile Include="CBApi\models\JobSearchResultTest.cs" />
+    <Compile Include="CBApi\models\RecommendJobResultTest.cs" />
+    <Compile Include="CBApi\models\ResponseJobSearchTest.cs" />
+    <Compile Include="CBApi\models\SavedSearchCreateTest.cs" />
+    <Compile Include="CBApi\models\SavedSearchListResponseModelTest.cs" />
+    <Compile Include="CBApi\models\SavedSearchRetrieveTest.cs" />
+    <Compile Include="CBApi\models\SavedSearchUpdateTest.cs" />
+    <Compile Include="CBApi\models\AnonymousApplicationTest.cs" />
+    <Compile Include="CBApi\models\service\TargetSiteMock.cs" />
+    <Compile Include="CBApi\framework\requests\UserRecommendationsRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\JobSearchRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\JobRequestTest.cs" />
+    <Compile Include="CBApi\framework\requests\EmployeeTypesRequestTest.cs" />
+    <Compile Include="CBApi\framework\stubrequests\UserReqStub.cs" />
+    <Compile Include="CBApi\models\SavedSearchDeleteTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CBApi\CBApiTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CBApi\CBApi.csproj">
+      <Project>{58C4C156-4095-4F29-AF07-72722D262261}</Project>
+      <Name>CBApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="testdata\JsonResponseWrapper.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CBApi\framework\events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="testdata\AnonymousApplicationRequestData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="testdata\AnonymousApplicationResponseData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="testdata\RecommendJobResult.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="testdata\ResponseBlankApplication.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="testdata\ResponseJobSearch.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="testdata\ResponseJobSearchWithFacets.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="testdata\SavedSearchListResponseModel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="testdata\SaveSearchCreateData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="testdata\SavedSearchDeleteResult.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
