@@ -49,6 +49,60 @@ namespace Tests.CBApi.framework.requests {
         }
 
         [Test]
+        public void WhereClause_OverridesExistingParam() {
+            //Setup
+            var request = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
+
+            //Mock crap
+            var response = new RestResponse<ResponseJobSearch> { Data = new ResponseJobSearch() };
+
+            var restReq = new Mock<IRestRequest>();
+            restReq.Setup(x => x.AddParameter("DeveloperKey", "DevKey"));
+            restReq.Setup(x => x.AddParameter("CountryCode", "SE"));
+            restReq.SetupSet(x => x.RootElement = "ResponseJobSearch");
+
+            var restClient = new Mock<IRestClient>();
+            restClient.SetupSet(x => x.BaseUrl = "https://api.careerbuilder.com/v1/jobsearch");
+            restClient.Setup(x => x.Execute<ResponseJobSearch>(It.IsAny<IRestRequest>())).Returns(response);
+
+            request.Request = restReq.Object;
+            request.Client = restClient.Object;
+
+            //Assert
+            ResponseJobSearch resp = request.WhereCountryCode("NL").Where("CountryCode","SE").Search();
+            restReq.Verify();
+            restClient.VerifyAll();
+        }
+
+        [Test]
+        public void WhereClause_AddsToOutgoingParams() {
+            //Setup
+            var request = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
+
+            //Mock crap
+            var response = new RestResponse<ResponseJobSearch> { Data = new ResponseJobSearch() };
+
+            var restReq = new Mock<IRestRequest>();
+            restReq.Setup(x => x.AddParameter("DeveloperKey", "DevKey"));
+            restReq.Setup(x => x.AddParameter("silly", "value"));
+            restReq.SetupSet(x => x.RootElement = "ResponseJobSearch");
+
+            var restClient = new Mock<IRestClient>();
+            restClient.SetupSet(x => x.BaseUrl = "https://api.careerbuilder.com/v1/jobsearch");
+            restClient.Setup(x => x.Execute<ResponseJobSearch>(It.IsAny<IRestRequest>())).Returns(response);
+
+            request.Request = restReq.Object;
+            request.Client = restClient.Object;
+
+            //Assert
+            ResponseJobSearch resp = request.Where("Silly", "value").Search();
+            restReq.Verify();
+            restClient.VerifyAll();
+        }
+
+
+
+        [Test]
         public void WhereCountryCode_ReturnsCategoryRequest() {
             var request = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             Assert.IsInstanceOf<IJobSearch>(request.WhereCountryCode("SE"));
@@ -79,7 +133,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotCompanyName("Coca Cola");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeCompanyNames");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludecompanynames");
             Assert.IsNotNull(param, "ExcludeCompanyNames should exist.");
             Assert.AreEqual("Coca Cola", param.Value, "ExcludeCompanyNames value should be 'Coca Cola'");
         }
@@ -89,7 +143,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotCompanyName("Coca Cola", "Intel Rabbit Co");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeCompanyNames");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludecompanynames");
             Assert.IsNotNull(param, "ExcludeCompanyNames should exist.");
             Assert.AreEqual("Coca Cola,Intel Rabbit Co", param.Value, "ExcludeCompanyNames value should be 'Coca Cola,Intel Rabbit Co'");
         }
@@ -99,7 +153,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotCompanyName(" ");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeCompanyNames");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludecompanynames");
             Assert.IsNull(param, "ExcludeCompanyNames should not exist.");
         }
 
@@ -108,7 +162,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotJobTitle("Coca Cola");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeJobTitles");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludejobtitles");
             Assert.IsNotNull(param, "ExcludeJobTitles should exist.");
             Assert.AreEqual("Coca Cola", param.Value, "ExcludeJobTitles value should be 'Coca Cola'");
         }
@@ -118,7 +172,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotJobTitle("Coca Cola", "Intel Rabbit Co");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeJobTitles");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludejobtitles");
             Assert.IsNotNull(param, "ExcludeJobTitles should exist.");
             Assert.AreEqual("Coca Cola,Intel Rabbit Co", param.Value, "ExcludeJobTitles value should be 'Coca Cola,Intel Rabbit Co'");
         }
@@ -128,7 +182,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotJobTitle(" ");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeJobTitles");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludejobtitles");
             Assert.IsNull(param, "ExcludeJobTitles should not exist.");
         }
 
@@ -137,7 +191,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotKeywords("Coca Cola");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeKeywords");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludekeywords");
             Assert.IsNotNull(param, "ExcludeKeywords should exist.");
             Assert.AreEqual("Coca Cola", param.Value, "ExcludeKeywords value should be 'Coca Cola'");
         }
@@ -147,7 +201,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotKeywords("Coca Cola", "Intel Rabbit Co");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeKeywords");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludekeywords");
             Assert.IsNotNull(param, "ExcludeKeywords should exist.");
             Assert.AreEqual("Coca Cola,Intel Rabbit Co", param.Value, "ExcludeKeywords value should be 'Coca Cola,Intel Rabbit Co'");
         }
@@ -157,7 +211,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereNotKeywords(" ");
             jobSearch.AddParametersToRequest();
-            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "ExcludeKeywords");
+            var param = jobSearch.Request.Parameters.Find(qs => qs.Name == "excludekeywords");
             Assert.IsNull(param, "ExcludeKeywords should not exist.");
         }
 
@@ -166,9 +220,9 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.WhereGroupingValue("grouping value");
             jobSearch.AddParametersToRequest();
-            var param_grouping_value = jobSearch.Request.Parameters.Find(qs => qs.Name == "GroupingValue").Value;
-            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "AdvancedGroupingMode").Value;
-            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "EnableCompanyJobTitleCollapse").Value;
+            var param_grouping_value = jobSearch.Request.Parameters.Find(qs => qs.Name == "groupingvalue").Value;
+            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "advancedgroupingmode").Value;
+            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "enablecompanyjobtitlecollapse").Value;
             Assert.AreEqual("grouping value", param_grouping_value);
             Assert.AreEqual(false, param_advanced_grouping);
             Assert.AreEqual(false, param_enable_company_job_title_collapse);
@@ -178,9 +232,9 @@ namespace Tests.CBApi.framework.requests {
         public void WhereGroupValue_SetsCorrectParameters_WhenNotSet() {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.AddParametersToRequest();
-            var param_grouping_value = jobSearch.Request.Parameters.Find(qs => qs.Name == "GroupingValue");
-            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "AdvancedGroupingMode").Value;
-            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "EnableCompanyJobTitleCollapse").Value;
+            var param_grouping_value = jobSearch.Request.Parameters.Find(qs => qs.Name == "groupingvalue");
+            var param_advanced_grouping = jobSearch.Request.Parameters.Find(qs => qs.Name == "advancedgroupingmode").Value;
+            var param_enable_company_job_title_collapse = jobSearch.Request.Parameters.Find(qs => qs.Name == "enablecompanyjobtitlecollapse").Value;
             Assert.IsNull(param_grouping_value);
             Assert.AreEqual(false,param_advanced_grouping);
             Assert.AreEqual(false,param_enable_company_job_title_collapse);
@@ -191,7 +245,7 @@ namespace Tests.CBApi.framework.requests {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.SetRecordsPerGroup(2); 
             jobSearch.AddParametersToRequest();
-            var param_records_per_group = jobSearch.Request.Parameters.Find(qs => qs.Name == "RecordsPerGroup").Value;
+            var param_records_per_group = jobSearch.Request.Parameters.Find(qs => qs.Name == "recordspergroup").Value;
             Assert.AreEqual(2,param_records_per_group );
         }
 
@@ -199,7 +253,7 @@ namespace Tests.CBApi.framework.requests {
         public void SetRecordsPerGroup_NotSet() {
             var jobSearch = new JobSearchStub("DevKey", "api.careerbuilder.com", "", "");
             jobSearch.AddParametersToRequest();
-            var param_records_per_group = jobSearch.Request.Parameters.Find(qs => qs.Name == "RecordsPerGroup");
+            var param_records_per_group = jobSearch.Request.Parameters.Find(qs => qs.Name == "recordspergroup");
             Assert.IsNull(param_records_per_group);
         }
 

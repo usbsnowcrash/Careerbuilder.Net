@@ -43,6 +43,7 @@ namespace CBApi.Framework.Requests {
         protected List<string> _ExcludedKeywords = new List<string>();
         protected string _ApplyRequirements = "";
         protected string _ExcludeApplyRequirements = "";
+        protected Dictionary<string, string> _WhereClauses = new Dictionary<string, string>();
 
         public override string BaseUrl {
             get { return "/v1/jobsearch"; }
@@ -153,7 +154,7 @@ namespace CBApi.Framework.Requests {
 
         public IJobSearch SetRecordsPerGroup(int value) {
             _RecordsPerGroup = value;
-            return this; 
+            return this;
         }
 
         public IJobSearch WhereCategories(params Category[] codes) {
@@ -223,7 +224,8 @@ namespace CBApi.Framework.Requests {
 
                     if (_Facets.ContainsKey(newFacet.Key)) {
                         _Facets[newFacet.Key] = newFacet.Value;
-                    } else {
+                    }
+                    else {
                         _Facets.Add(newFacet.Key, newFacet.Value);
                     }
                 }
@@ -343,6 +345,11 @@ namespace CBApi.Framework.Requests {
             return this;
         }
 
+        public IJobSearch Where(string key, string value) {
+            _WhereClauses.Add(key.ToLower(), value);
+            return this;
+        }
+
         protected void AddParametersToRequest() {
             AddKeywordsToRequest();
             AddCompanyNameToRequest();
@@ -377,61 +384,67 @@ namespace CBApi.Framework.Requests {
             AddGroupingValueToRequest();
             AddAdvancedGroupingModeToRequest();
             AddCompanyJobTitleCollapseToRequest();
-            AddRecordsPerGroupToRequest(); 
+            AddRecordsPerGroupToRequest();
+            AddGenericClauses();
+        }
 
+        private void AddGenericClauses() {
+            foreach (var item in _WhereClauses) {
+                _request.AddParameter(item.Key.ToLower(), item.Value);
+            }
         }
 
         private void AddApplyRequirementsToRequest() {
             if (!string.IsNullOrEmpty(_ApplyRequirements))
-                _request.AddParameter("ApplyRequirements", _ApplyRequirements);
+                _request.AddParameter("ApplyRequirements".ToLower(), _ApplyRequirements);
         }
 
         private void AddExcludeApplyRequirementsToRequest() {
             if (!string.IsNullOrEmpty(_ExcludeApplyRequirements))
-                _request.AddParameter("ExcludeApplyRequirements", _ExcludeApplyRequirements);
+                _request.AddParameter("ExcludeApplyRequirements".ToLower(), _ExcludeApplyRequirements);
         }
 
         private void AddCategoriesToRequest() {
             if (_CategoryCodes.Count > 0 && _CategoryCodes.Count <= 10) {
                 string cats = string.Join(",", _CategoryCodes);
-                _request.AddParameter("Category", cats);
+                _request.AddParameter("Category".ToLower(), cats);
             }
         }
 
         private void AddPayHighToRequest() {
             if (_MaxPay != null && _MaxPay > 0)
-                _request.AddParameter("PayHigh", _MaxPay);
+                _request.AddParameter("PayHigh".ToLower(), _MaxPay);
         }
 
         private void AddPayLowToRequest() {
             if (_MinPay != null && _MinPay > 0)
-                _request.AddParameter("PayLow", _MinPay);
+                _request.AddParameter("PayLow".ToLower(), _MinPay);
         }
 
         private void AddCompanyDIDsToRequest() {
             if (_CompanyDids.Count > 0) {
                 string comps = string.Join(",", _CompanyDids);
-                _request.AddParameter("CompanyDIDCSV", comps);
+                _request.AddParameter("CompanyDIDCSV".ToLower(), comps);
             }
         }
 
         private void AddCompanyNameToRequest() {
             if (!string.IsNullOrEmpty(_CompanyName)) {
-                _request.AddParameter("CompanyName", _CompanyName);
+                _request.AddParameter("CompanyName".ToLower(), _CompanyName);
             }
         }
 
         private void AddCountryCodeToRequest() {
             if (!string.IsNullOrEmpty(_CountryCode)) {
-                _request.AddParameter("CountryCode", _CountryCode);
+                _request.AddParameter("CountryCode".ToLower(), _CountryCode);
             }
         }
 
         private void AddEducationToRequest() {
             if (!string.IsNullOrWhiteSpace(_EducationCode) && _EducationCode != "DRNS") {
-                _request.AddParameter("EducationCode", _EducationCode);
+                _request.AddParameter("EducationCode".ToLower(), _EducationCode);
                 if (_SpecificEducation) {
-                    _request.AddParameter("SpecificEducation", _SpecificEducation.ToString());
+                    _request.AddParameter("SpecificEducation".ToLower(), _SpecificEducation.ToString());
                 }
             }
         }
@@ -439,46 +452,46 @@ namespace CBApi.Framework.Requests {
         private void AddEmployeeTypesToRequest() {
             if (_EmployeeTypes.Count > 0) {
                 string industries = string.Join(",", _EmployeeTypes);
-                _request.AddParameter("EmpType", industries);
+                _request.AddParameter("EmpType".ToLower(), industries);
             }
         }
 
         private void AddExcludedCompaniesToRequest() {
             if (_ExcludedCompanies.Count > 0) {
                 string companies = string.Join(",", _ExcludedCompanies);
-                _request.AddParameter("ExcludeCompanyNames", companies);
+                _request.AddParameter("ExcludeCompanyNames".ToLower(), companies);
             }
         }
 
         private void AddExcludedJobTitlesToRequest() {
             if (_ExcludedJobTitles.Count > 0) {
                 string titles = string.Join(",", _ExcludedJobTitles);
-                _request.AddParameter("ExcludeJobTitles", titles);
+                _request.AddParameter("ExcludeJobTitles".ToLower(), titles);
             }
         }
 
         private void AddExcludedKeywordsToRequest() {
             if (_ExcludedKeywords.Count > 0) {
                 string keywords = string.Join(",", _ExcludedKeywords);
-                _request.AddParameter("ExcludeKeywords", keywords);
+                _request.AddParameter("ExcludeKeywords".ToLower(), keywords);
             }
         }
 
         private void AddSimpleExclusionsToRequest() {
             if (_ExcludeJobsWithoutSalary) {
-                _request.AddParameter("PayInfoOnly", "true");
+                _request.AddParameter("PayInfoOnly".ToLower(), "true");
             }
             if (_ExcludeNationwide) {
-                _request.AddParameter("ExcludeNational", "true");
+                _request.AddParameter("ExcludeNational".ToLower(), "true");
             }
             if (_ExcludeNontraditional) {
-                _request.AddParameter("ExcludeNonTraditionalJobs", "true");
+                _request.AddParameter("ExcludeNonTraditionalJobs".ToLower(), "true");
             }
         }
 
         private void AddFacets() {
             if (_ShowFacets || _Facets.Count > 0) {
-                _request.AddParameter("UseFacets", "true");
+                _request.AddParameter("UseFacets".ToLower(), "true");
             }
 
             foreach (var facet in _Facets) {
@@ -488,7 +501,7 @@ namespace CBApi.Framework.Requests {
 
         private void AddHostSiteToRequest() {
             if (!string.IsNullOrWhiteSpace(_HostSite)) {
-                _request.AddParameter("HostSite", _HostSite);
+                _request.AddParameter("HostSite".ToLower(), _HostSite);
             }
         }
 
@@ -498,86 +511,86 @@ namespace CBApi.Framework.Requests {
                     _IndustryCodes.RemoveRange(10, _IndustryCodes.Count - 10);
                 }
                 string industries = string.Join(",", _IndustryCodes);
-                _request.AddParameter("IndustryCodes", industries);
+                _request.AddParameter("IndustryCodes".ToLower(), industries);
             }
         }
 
         private void AddKeywordsToRequest() {
             if (!string.IsNullOrEmpty(_Keywords)) {
-                _request.AddParameter("Keywords", _Keywords);
+                _request.AddParameter("Keywords".ToLower(), _Keywords);
             }
             if (_BooleanOperator == BooleanOperator.OR) {
-                _request.AddParameter("BooleanOperator", _BooleanOperator.ToString());
+                _request.AddParameter("BooleanOperator".ToLower(), _BooleanOperator.ToString());
             }
         }
 
         private void AddLocationToRequest() {
             if (!string.IsNullOrEmpty(_Location)) {
-                _request.AddParameter("Location", _Location);
+                _request.AddParameter("Location".ToLower(), _Location);
             }
         }
 
         private void AddOrderByToRequest() {
             if (!(_OrderBy == OrderByType.Relevance && _OrderDirection == OrderDirection.Descending)) {
-                _request.AddParameter("OrderBy", _OrderBy.ToString());
-                _request.AddParameter("OrderDirection", _OrderDirection.ToString());
+                _request.AddParameter("OrderBy".ToLower(), _OrderBy.ToString());
+                _request.AddParameter("OrderDirection".ToLower(), _OrderDirection.ToString());
             }
         }
 
         private void AddPageNumberToRequest() {
-            _request.AddParameter("PageNumber", _PageNumber);
+            _request.AddParameter("PageNumber".ToLower(), _PageNumber);
         }
 
         private void AddPerPageToRequest() {
-            _request.AddParameter("PerPage", _PerPage);
+            _request.AddParameter("PerPage".ToLower(), _PerPage);
         }
 
         private void AddPostedWithinToRequest() {
             if (_PostedWithin >= 1 && _PostedWithin <= 30) {
-                _request.AddParameter("PostedWithin", _PostedWithin.ToString());
+                _request.AddParameter("PostedWithin".ToLower(), _PostedWithin.ToString());
             }
         }
 
         private void AddRadiusToRequest() {
             if (_Radius >= 5 && _Radius <= 150) {
-                _request.AddParameter("Radius", _Radius.ToString());
+                _request.AddParameter("Radius".ToLower(), _Radius.ToString());
             }
         }
 
         private void AddSearchViewToRequest() {
             if (!string.IsNullOrWhiteSpace(_SearchView)) {
-                _request.AddParameter("SearchView", _SearchView);
+                _request.AddParameter("SearchView".ToLower(), _SearchView);
             }
         }
 
         private void AddSiteEntityToRequest() {
             if (!string.IsNullOrEmpty(_SiteEntity))
-                _request.AddParameter("SiteEntity", _SiteEntity);
+                _request.AddParameter("SiteEntity".ToLower(), _SiteEntity);
         }
 
         private void AddSOCCodeToRequest() {
             if (!string.IsNullOrEmpty(_Soccode)) {
-                _request.AddParameter("SOCCode", _Soccode);
+                _request.AddParameter("SOCCode".ToLower(), _Soccode);
             }
         }
 
         private void AddGroupingValueToRequest() {
             if (!string.IsNullOrEmpty(_GroupingValue)) {
-                _request.AddParameter("GroupingValue", _GroupingValue);
+                _request.AddParameter("GroupingValue".ToLower(), _GroupingValue);
             }
         }
 
         private void AddAdvancedGroupingModeToRequest() {
-            _request.AddParameter("AdvancedGroupingMode", _AdvancedGroupingMode);
+            _request.AddParameter("AdvancedGroupingMode".ToLower(), _AdvancedGroupingMode);
         }
 
         private void AddCompanyJobTitleCollapseToRequest() {
-            _request.AddParameter("EnableCompanyJobTitleCollapse", _EnableCompanyJobTitleCollapse);
+            _request.AddParameter("EnableCompanyJobTitleCollapse".ToLower(), _EnableCompanyJobTitleCollapse);
         }
 
         private void AddRecordsPerGroupToRequest() {
             if (_RecordsPerGroup > -1) {
-                _request.AddParameter("RecordsPerGroup", _RecordsPerGroup);
+                _request.AddParameter("RecordsPerGroup".ToLower(), _RecordsPerGroup);
             }
         }
 
