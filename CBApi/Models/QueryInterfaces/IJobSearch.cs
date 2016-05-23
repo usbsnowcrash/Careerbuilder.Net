@@ -128,5 +128,7 @@ namespace CBApi.Models {
         IJobSearch WhereSiteEntity(string value);
 
         IJobSearch WhereSOCCode(string value);
+
+        IJobSearch Where(string key, string value);
     }
 }
